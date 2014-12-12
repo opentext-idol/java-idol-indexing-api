@@ -1,0 +1,10 @@
+# $Id$
+# Last modified by $Author$ on $Date$
+
+New Features
+ 1. New helper constructors in com.autonomy.nonaci.ServerDetails to allow setting 
+    of host and port details, without having to use the property acessors.
+
+Resolved Issues
+ 1. Updated 3rd party librarties to their latest versions; HttpComponents to 4.2.6, 
+    Commons Lang to 2.6 and slf4j to 1.7.5.
