@@ -95,7 +95,7 @@
               <packages>com.autonomy.nonaci:com.autonomy.nonaci.indexing</packages>
             </group>
             <group>
-              <title>Core Implmentation</title>
+              <title>Core Implementation</title>
               <packages>com.autonomy.nonaci.indexing.impl</packages>
             </group>
           </groups>
