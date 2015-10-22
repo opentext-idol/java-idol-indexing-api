@@ -8,31 +8,31 @@
   - Last modified by $Author$ On $Date$
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.hp.autonomy</groupId>
-    <artifactId>foss-master-pom</artifactId>
-    <version>1.0.1</version>
-  </parent>
-  
-  <groupId>com.autonomy</groupId>
-  <artifactId>NonAciNG</artifactId>
-  <version>2.2.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <parent>
+        <groupId>com.hp.autonomy</groupId>
+        <artifactId>foss-master-pom</artifactId>
+        <version>1.0.1</version>
+    </parent>
 
-  <name>Autonomy Indexing API</name>
-  <inceptionYear>2008</inceptionYear>
+    <groupId>com.autonomy</groupId>
+    <artifactId>NonAciNG</artifactId>
+    <version>2.2.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <properties>
-    <httpcomponents.version>4.3.6</httpcomponents.version>
-    <slf4j.version>1.7.7</slf4j.version>
-    <java.version>1.6</java.version>
-  </properties>
+    <name>Autonomy Indexing API</name>
+    <inceptionYear>2008</inceptionYear>
+
+    <properties>
+        <httpcomponents.version>4.3.6</httpcomponents.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <java.version>1.6</java.version>
+    </properties>
 
     <profiles>
         <profile>
@@ -57,112 +57,112 @@
         </profile>
     </profiles>
 
-  <build>
-    <defaultGoal>package</defaultGoal>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>animal-sniffer-maven-plugin</artifactId>
-            <version>1.14</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>check</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <signature>
-                    <groupId>org.codehaus.mojo.signature</groupId>
-                    <artifactId>java16</artifactId>
-                    <version>1.1</version>
-                </signature>
-            </configuration>
-        </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.2</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.9.1</version>
-        <configuration>
-          <groups>
-            <group>
-              <title>Base API</title>
-              <packages>com.autonomy.nonaci:com.autonomy.nonaci.indexing</packages>
-            </group>
-            <group>
-              <title>Core Implementation</title>
-              <packages>com.autonomy.nonaci.indexing.impl</packages>
-            </group>
-          </groups>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>animal-sniffer-maven-plugin</artifactId>
+                <version>1.14</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <signature>
+                        <groupId>org.codehaus.mojo.signature</groupId>
+                        <artifactId>java16</artifactId>
+                        <version>1.1</version>
+                    </signature>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <groups>
+                        <group>
+                            <title>Base API</title>
+                            <packages>com.autonomy.nonaci:com.autonomy.nonaci.indexing</packages>
+                        </group>
+                        <group>
+                            <title>Core Implementation</title>
+                            <packages>com.autonomy.nonaci.indexing.impl</packages>
+                        </group>
+                    </groups>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <dependencies>
-    <!-- Compile dependancies... -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.3.2</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${httpcomponents.version}</version>
-      <scope>compile</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>    
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-      <version>${slf4j.version}</version>
-      <scope>compile</scope>
-    </dependency>
-    
-    <!-- Test dependancies... -->
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.12</version>
-          <scope>test</scope>
-      </dependency>
-      <dependency>
-          <groupId>org.hamcrest</groupId>
-          <artifactId>hamcrest-all</artifactId>
-          <version>1.3</version>
-          <scope>test</scope>
-      </dependency>
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.1.2</version>
-      <scope>test</scope>
-    </dependency>
+    <dependencies>
+        <!-- Compile dependancies... -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpcomponents.version}</version>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>compile</scope>
+        </dependency>
 
-  </dependencies>
-  
+        <!-- Test dependancies... -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
 </project>
