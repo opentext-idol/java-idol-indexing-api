@@ -20,13 +20,55 @@
         <version>1.0.1</version>
     </parent>
 
-    <groupId>com.autonomy</groupId>
-    <artifactId>NonAciNG</artifactId>
-    <version>2.2.1-SNAPSHOT</version>
+    <groupId>com.hp.autonomy.idol</groupId>
+    <artifactId>indexing-api</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Autonomy Indexing API</name>
+    <name>Java IDOL Indexing API</name>
+    <description>API for indexing into IDOL using Java</description>
     <inceptionYear>2008</inceptionYear>
+
+    <organization>
+        <name>Hewlett-Packard Development Company, L.P.</name>
+        <url>http://www.hp.com/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Bob Arnott</name>
+        </developer>
+        <developer>
+            <name>Darrell Newman</name>
+        </developer>
+        <developer>
+            <name>Jeff Foster</name>
+        </developer>
+        <developer>
+            <name>Alex Scown</name>
+            <email>alex.scown@hpe.com</email>
+            <organization>HP</organization>
+            <organizationUrl>http://www.hp.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:hpautonomy/java-idol-indexing-api.git</connection>
+        <developerConnection>scm:git:git@github.com:hpautonomy/java-idol-indexing-api.git</developerConnection>
+        <url>git@github.com:hpautonomy/java-idol-indexing-api.git</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/hpautonomy/java-idol-indexing-api/issues</url>
+    </issueManagement>
 
     <properties>
         <httpcomponents.version>4.3.6</httpcomponents.version>
