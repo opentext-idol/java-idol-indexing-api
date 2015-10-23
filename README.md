@@ -2,7 +2,7 @@
 
 A Java API for indexing into IDOL servers.
 
-[![Build Status](https://travis-ci.org/hpautonomy/java-aci-api-ng.svg?branch=master)](https://travis-ci.org/hpautonomy/java-idol-indexing-api)
+[![Build Status](https://travis-ci.org/hpautonomy/java-idol-indexing-api.svg?branch=master)](https://travis-ci.org/hpautonomy/java-idol-indexing-api)
 
 ## About
 IDOL servers use an index port for indexing content. This library provides a Java API for performing this task.

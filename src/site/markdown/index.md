@@ -16,7 +16,7 @@ java-idol-indexing-api is available from the central Maven repository.
         <version>3.0.0</version>
     </dependency>
 
-The primary means of interaction is the IndexingService. An IndexingImpl can either be created with the host and index 
+The primary means of interaction is the IndexingService. An IndexingServiceImpl can either be created with the host and index 
 port for an IDOL server, or the executeAction method must be called with a host and port each time.
 
     final IndexingService indexingService = new IndexingServiceImpl(
