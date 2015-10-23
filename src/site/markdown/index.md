@@ -3,9 +3,9 @@
 This is a Java API for indexing documents into IDOL servers.
 
 ## About
-The Autonomy Content Infrastructure (ACI) is a protocol for communicating with HP Autonomy servers using XML over HTTP.
-This Java API provides an interface for constructing and executing ACI requests and for consuming ACI responses. Previous
-versions were available as jar files from HP Autonomy customer support.
+IDOL servers use an index port for indexing content. This library provides a Java API for performing this task.
+
+Previous versions were available as jar files from HP Autonomy customer support.
 
 ## Usage
 java-idol-indexing-api is available from the central Maven repository.
