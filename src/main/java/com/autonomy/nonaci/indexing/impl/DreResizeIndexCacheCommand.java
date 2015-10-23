@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * DreResizeIndexCacheCommand.java
- * Created on 04-Jul-2008, 10:39:48
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -22,7 +17,6 @@ import org.apache.commons.lang3.math.NumberUtils;
  * necessary can degrade indexing performance.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreResizeIndexCacheCommand extends IndexCommandImpl {
 
@@ -32,7 +26,7 @@ public class DreResizeIndexCacheCommand extends IndexCommandImpl {
     }
 
     /**
-     * @return If the return value is <tt>-1</tt> thios indicates that hte property hasn't been set.
+     * @return If the return value is <tt>-1</tt> this indicates that the property hasn't been set.
      */
     public int getIndexCacheMaxSize() {
         return NumberUtils.toInt(get(PARAM_INDEX_CACHE_MAX_SIZE), -1);

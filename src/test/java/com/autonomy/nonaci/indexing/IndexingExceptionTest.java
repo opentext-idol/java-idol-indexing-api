@@ -1,27 +1,23 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * IndexingExceptionTest.java
- * Created on 04-Jul-2008, 17:06:29
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing;
 
+import org.junit.Test;
+
 import java.io.IOException;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.Assert.assertThat;
-import org.junit.Test;
 
 /**
  * JUnit tests for <tt>com.autonomy.nonaci.indexing.IndexingException</tt>.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class IndexingExceptionTest {
 

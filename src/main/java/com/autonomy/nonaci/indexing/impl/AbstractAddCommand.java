@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * AbstractAddCommand.java
- * Created on 16-Sep-2008, 15:16:38
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -16,7 +11,6 @@ import org.apache.commons.lang3.BooleanUtils;
  * their shared parameters.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public abstract class AbstractAddCommand extends IndexCommandImpl {
 
@@ -297,7 +291,7 @@ public abstract class AbstractAddCommand extends IndexCommandImpl {
     /**
      * You can enter one of the following options to determine how IDOL server handles duplicate text. If you postfix 
      * any of these options with <strong>=2</strong>, the KillDuplicates process is applied to all IDOL server databases
-     * (rather than just the database into which the currrent IDX or XML file is being indexed):
+     * (rather than just the database into which the current IDX or XML file is being indexed):
      * <p />
      * <dl>
      *   <dt><strong>NONE</strong></dt>

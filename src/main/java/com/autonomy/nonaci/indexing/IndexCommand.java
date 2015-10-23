@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * IndexCommand.java
- * Created on 20-Jun-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing;
 
@@ -14,7 +9,6 @@ package com.autonomy.nonaci.indexing;
  * includes constants for all the index commands and their parameters.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public interface IndexCommand {
 

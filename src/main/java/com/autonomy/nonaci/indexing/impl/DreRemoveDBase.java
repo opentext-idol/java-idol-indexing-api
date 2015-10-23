@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * DreRemoveDBase.java
- * Created on 25-Jun-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -13,7 +8,6 @@ package com.autonomy.nonaci.indexing.impl;
  * Allows you to delete an IDOL server database and all the documents it contains.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreRemoveDBase extends IndexCommandImpl {
 

@@ -1,20 +1,19 @@
 /*
- * $Id$
- *
- * Copyright (c) 2010, Autonomy Systems Ltd.
- *
- * IndexCommandImplTest.java
- * Created on 05-Jan-2010
- * Last modified by $Author$ on $Date$ 
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexCommand;
+import org.apache.commons.io.IOUtils;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.commons.io.IOUtils;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -22,15 +21,7 @@ import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.sameInstance;
-import org.junit.Before;
-import org.junit.Test;
 
-/**
- * .
- *
- * @author boba
- * @version $Revision$ $Date$
- */
 public class IndexCommandImplTest {
 
     private IndexCommandImpl command; 

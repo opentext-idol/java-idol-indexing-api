@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * PostData.java
- * Created on 09-Oct-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing;
 
@@ -15,10 +10,9 @@ import java.io.OutputStream;
 
 /**
  * Defines methods for handling post data. This interface is based on the Apache HttpClient <tt>HttpEntity</tt> 
- * interface, but without any referendce to other HttpClient specific classes or interfaces.
+ * interface, but without any reference to other HttpClient specific classes or interfaces.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public interface PostData {
 

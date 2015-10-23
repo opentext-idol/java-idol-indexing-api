@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * StringPostDataImpl.java
- * Created on 09-Oct-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -16,7 +11,6 @@ package com.autonomy.nonaci.indexing.impl;
  * content type defaults to <tt>text/plain; charset=UTF-8</tt>.
  *
  * @author boba
- * @version $Revision$ $Date$
  * @deprecated As of 2.0.0, use {@link PostDataImpl} instead
  */
 @Deprecated

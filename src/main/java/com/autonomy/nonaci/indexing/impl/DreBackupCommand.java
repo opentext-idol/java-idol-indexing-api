@@ -1,17 +1,13 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * DreBackupCommand.java
- * Created on 03-Jul-2008, 14:45:25
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
-import java.io.UnsupportedEncodingException;
 import org.apache.commons.codec.net.URLCodec;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Allows you to back up IDOL server's data index. This command copies all the IDOL server data index's *.DB files to a 
@@ -20,7 +16,6 @@ import org.apache.commons.codec.net.URLCodec;
  * To restore backed up files, use the <strong>DREINITIAL</strong> command.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreBackupCommand extends IndexCommandImpl {
 
@@ -39,7 +34,7 @@ public class DreBackupCommand extends IndexCommandImpl {
         try {
             return urlCodec.encode(path, "UTF-8");
         }
-        catch(UnsupportedEncodingException uee) {
+        catch(final UnsupportedEncodingException uee) {
             throw new IndexingException(uee);
         }
     }
