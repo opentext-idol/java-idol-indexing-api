@@ -15,7 +15,7 @@ import java.io.OutputStream;
 
 /**
  * Defines methods for handling post data. This interface is based on the Apache HttpClient <tt>HttpEntity</tt> 
- * interface, but without any referendce to other HttpClient specific classes or interfaces.
+ * interface, but without any reference to other HttpClient specific classes or interfaces.
  *
  * @author boba
  * @version $Revision$ $Date$

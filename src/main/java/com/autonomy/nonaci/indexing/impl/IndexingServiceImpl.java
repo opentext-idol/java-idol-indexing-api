@@ -41,7 +41,7 @@ import java.util.regex.Pattern;
  * <p/>
  * The {@link org.apache.http.client.HttpClient} instance to be used should be set before calling either of the execute
  * methods. The {@link com.autonomy.nonaci.ServerDetails} can either be set before calling the execute method, or
- * optionally sent as a method paramter to the execute method. This allows the API to be set up to talk to a single IDOL
+ * optionally sent as a method parameter to the execute method. This allows the API to be set up to talk to a single IDOL
  * server by setting the details once, or multiple IDOL Servers by sending the details with every invocation of execute.
  *
  * @author boba
@@ -126,6 +126,7 @@ public class IndexingServiceImpl implements IndexingService {
      * @return the index queue id for the command
      * @throws com.autonomy.nonaci.indexing.IndexingException if an error response was detected
      */
+    @Override
     public int executeCommand(final IndexCommand command) throws IndexingException {
         LOGGER.trace("executeCommand() called...");
 
@@ -142,6 +143,7 @@ public class IndexingServiceImpl implements IndexingService {
      * @throws com.autonomy.nonaci.indexing.IndexingException if an error response was detected, or if something went
      * wrong while executing the command
      */
+    @Override
     public int executeCommand(final ServerDetails serverDetails, final IndexCommand command) throws IndexingException {
         LOGGER.trace("executeCommand() called...");
 
@@ -182,10 +184,10 @@ public class IndexingServiceImpl implements IndexingService {
 
             throw new IndexingException("Unable to get index queue id from response: [" + response + ']');
         }
-        catch(IOException ioe) {
+        catch(final IOException ioe) {
             throw new IndexingException("Unable to execute the Index command", ioe);
         }
-        catch(URISyntaxException urise) {
+        catch(final URISyntaxException urise) {
             throw new IndexingException("Unable to construct the Index command URI.", urise);
         }
         finally {
@@ -195,7 +197,7 @@ public class IndexingServiceImpl implements IndexingService {
                     EntityUtils.consume(httpResponse.getEntity());
                 }
             }
-            catch(IOException ioe) {
+            catch(final IOException ioe) {
                 LOGGER.error("Unable to consume any remaining content from the IndexCommand response.", ioe);
             }
         }

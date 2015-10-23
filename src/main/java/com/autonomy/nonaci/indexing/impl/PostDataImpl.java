@@ -38,7 +38,7 @@ import java.nio.charset.UnsupportedCharsetException;
  */
 public class PostDataImpl implements PostData {
 
-    private HttpEntity httpEntity;
+    private final HttpEntity httpEntity;
 
     public PostDataImpl(final String string) {
         this(string, null);
@@ -48,7 +48,7 @@ public class PostDataImpl implements PostData {
         try {
             httpEntity = new StringEntity(string, StringUtils.isBlank(charset) ? "UTF-8" : charset);
         }
-        catch(UnsupportedCharsetException uce) {
+        catch(final UnsupportedCharsetException uce) {
             throw new IndexingException("Unsupported charset specified, " + charset, uce);
         }
     }
@@ -100,38 +100,47 @@ public class PostDataImpl implements PostData {
         return returnValue;
     }
 
+    @Override
     public boolean isRepeatable() {
         return httpEntity.isRepeatable();
     }
 
+    @Override
     public boolean isChunked() {
         return httpEntity.isChunked();
     }
 
+    @Override
     public long getContentLength() {
         return httpEntity.getContentLength();
     }
 
+    @Override
     public String getContentType() {
         return (httpEntity.getContentType() == null) ? null : httpEntity.getContentType().getValue();
     }
 
+    @Override
     public String getContentEncoding() {
         return (httpEntity.getContentEncoding() == null) ? null : httpEntity.getContentEncoding().getValue();
     }
 
+    @Override
     public InputStream getContent() throws IOException {
         return httpEntity.getContent();
     }
 
+    @Override
     public void writeTo(final OutputStream outstream) throws IOException {
         httpEntity.writeTo(outstream);
     }
 
+    @Override
     public boolean isStreaming() {
         return httpEntity.isStreaming();
     }
 
+    @Override
     public void finish() throws IOException {
         EntityUtils.consume(httpEntity);
     }

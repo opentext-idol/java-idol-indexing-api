@@ -40,7 +40,7 @@ public class DreBackupCommand extends IndexCommandImpl {
         try {
             return urlCodec.encode(path, "UTF-8");
         }
-        catch(UnsupportedEncodingException uee) {
+        catch(final UnsupportedEncodingException uee) {
             throw new IndexingException(uee);
         }
     }

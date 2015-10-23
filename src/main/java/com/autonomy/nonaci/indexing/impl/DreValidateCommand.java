@@ -20,7 +20,7 @@ public class DreValidateCommand extends IndexCommandImpl {
     public enum Type {
         DISK_INDEX("DiskIndex"), NODE_TABLE("NodeTable");
 
-        private String actual;
+        private final String actual;
 
         Type(final String actual) {
             this.actual = actual;

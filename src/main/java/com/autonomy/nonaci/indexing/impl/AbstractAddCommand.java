@@ -297,7 +297,7 @@ public abstract class AbstractAddCommand extends IndexCommandImpl {
     /**
      * You can enter one of the following options to determine how IDOL server handles duplicate text. If you postfix 
      * any of these options with <strong>=2</strong>, the KillDuplicates process is applied to all IDOL server databases
-     * (rather than just the database into which the currrent IDX or XML file is being indexed):
+     * (rather than just the database into which the current IDX or XML file is being indexed):
      * <p />
      * <dl>
      *   <dt><strong>NONE</strong></dt>

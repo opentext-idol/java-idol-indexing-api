@@ -32,7 +32,7 @@ public class DreResizeIndexCacheCommand extends IndexCommandImpl {
     }
 
     /**
-     * @return If the return value is <tt>-1</tt> thios indicates that hte property hasn't been set.
+     * @return If the return value is <tt>-1</tt> this indicates that the property hasn't been set.
      */
     public int getIndexCacheMaxSize() {
         return NumberUtils.toInt(get(PARAM_INDEX_CACHE_MAX_SIZE), -1);

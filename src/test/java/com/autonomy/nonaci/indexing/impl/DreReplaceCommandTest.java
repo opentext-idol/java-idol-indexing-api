@@ -39,12 +39,9 @@ public class DreReplaceCommandTest {
 
     @BeforeClass
     public static void createQueryString() {
-        final StringBuilder buffer = new StringBuilder(512);
-        buffer.append(IndexCommand.PARAM_DATABASE_MATCH).append("=test&");
-        buffer.append(IndexCommand.PARAM_MULTIPLE_VALUES).append("=true&");
-        buffer.append(IndexCommand.PARAM_REPLACE_ALL_REFS).append("=true");
-
-        queryString = buffer.toString();
+        queryString = IndexCommand.PARAM_DATABASE_MATCH + "=test&"
+            + IndexCommand.PARAM_MULTIPLE_VALUES + "=true&"
+            + IndexCommand.PARAM_REPLACE_ALL_REFS + "=true";
     }
 
 
@@ -58,7 +55,7 @@ public class DreReplaceCommandTest {
     @SuppressWarnings("unchecked")
     public void testParameterMapMethods() {
         // Parameters should be empty...
-        assertThat("parameters", command.getParameters().isEmpty(), (Matcher<Boolean>) is(true));
+        assertThat("parameters", command.getParameters().isEmpty(), is(true));
 
         // Set some parameters...
         final Map<String, String> parameters = new LinkedHashMap<String, String>();
@@ -67,22 +64,22 @@ public class DreReplaceCommandTest {
         parameters.put(IndexCommand.PARAM_REPLACE_ALL_REFS, "true");
         command.setParameters(parameters);
 
-        // Parameters should no longer be empty and the retruned map should be a different instance...
-        assertThat("parameters", command.getParameters().size(), (Matcher<Integer>) is(3));
+        // Parameters should no longer be empty and the returned map should be a different instance...
+        assertThat("parameters", command.getParameters().size(), is(3));
         assertThat("parameters", command.getParameters(), is(not(sameInstance(parameters))));
-        assertThat("queryString", command.getQueryString(), (Matcher<String>) is(equalTo(queryString)));
+        assertThat("queryString", command.getQueryString(), is(equalTo(queryString)));
 
         // I should be able to modify our copy of the map and the command's copy shouldn't change...
         parameters.put(IndexCommand.PARAM_BLOCKING, "true");
-        assertThat("parameters", command.getParameters().size(), (Matcher<Integer>) is(3));
-        assertThat("queryString", command.getQueryString(), (Matcher<String>) is(equalTo(queryString)));
+        assertThat("parameters", command.getParameters().size(), is(3));
+        assertThat("queryString", command.getQueryString(), is(equalTo(queryString)));
     }
 
     @Test
     @SuppressWarnings("unchecked")
     public void testParameterMethods() {
         // Parameters should be empty...
-        assertThat("parameters", command.getParameters().isEmpty(), (Matcher<Boolean>) is(true));
+        assertThat("parameters", command.getParameters().isEmpty(), is(true));
 
         // Set some parameters...
         command.setDatabaseMatch("test");
@@ -90,8 +87,8 @@ public class DreReplaceCommandTest {
         command.setReplaceAllRefs(true);
 
         // Parameters should no longer be empty...
-        assertThat("parameters", command.getParameters().size(), (Matcher<Integer>) is(3));
-        assertThat("queryString", command.getQueryString(), (Matcher<String>) is(equalTo(queryString)));
+        assertThat("parameters", command.getParameters().size(), is(3));
+        assertThat("queryString", command.getQueryString(), is(equalTo(queryString)));
     }
 
 }

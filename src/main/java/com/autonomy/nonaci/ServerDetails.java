@@ -27,7 +27,7 @@ import java.nio.charset.UnsupportedCharsetException;
 public class ServerDetails {
 
     /** Holds the different types of transport protocol that can be used by ACI servers. */
-    public static enum TransportProtocol {HTTP, HTTPS}
+    public enum TransportProtocol {HTTP, HTTPS}
 
     /** Holds value of property protocol. Defaults to <tt>TransportProtocol.HTTP</tt>. */
     private TransportProtocol protocol = TransportProtocol.HTTP;

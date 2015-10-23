@@ -44,14 +44,14 @@ public class DreAddCommand extends AbstractAddCommand {
     @Override
     public String getQueryString() {
         try {
-            // Get the query string comprising of all the other parameteres...
+            // Get the query string comprising of all the other parameters...
             final String queryString = super.getQueryString();
 
             return StringUtils.isNotBlank(queryString)
                     ? urlCodec.encode(indexFile, "UTF-8") + '&' + queryString
                     : urlCodec.encode(indexFile, "UTF-8");
         }
-        catch(UnsupportedEncodingException uee) {
+        catch(final UnsupportedEncodingException uee) {
             throw new IndexingException(uee);
         }
     }

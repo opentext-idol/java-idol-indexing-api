@@ -46,19 +46,19 @@ public class ServerDetailsTest {
             new ServerDetails(null, 10);
             fail("Should have thrown a NullPointerException as host is null.");
         }
-        catch(NullPointerException npe) { /* ignore */ }
+        catch(final NullPointerException npe) { /* ignore */ }
 
         try {
             new ServerDetails("localhost", -10);
             fail("Should have thrown an IllegalArgumentException as the port is out of range.");
         }
-        catch(IllegalArgumentException iae) { /* ignore */ }
+        catch(final IllegalArgumentException iae) { /* ignore */ }
 
         try {
             new ServerDetails("localhost", 123456789);
             fail("Should have thrown an IllegalArgumentException as the port is out of range.");
         }
-        catch(IllegalArgumentException iae) { /* ignore */ }
+        catch(final IllegalArgumentException iae) { /* ignore */ }
 
         // Create one for real...
         final ServerDetails details = new ServerDetails("localhost", 10);
@@ -76,25 +76,25 @@ public class ServerDetailsTest {
             new ServerDetails(null, null, 10);
             fail("Should have thrown a NullPointerException as the protocol was set to null.");
         }
-        catch(NullPointerException npe) { /* ignore */ }
+        catch(final NullPointerException npe) { /* ignore */ }
 
         try {
             new ServerDetails(ServerDetails.TransportProtocol.HTTPS, null, 10);
             fail("Should have thrown a NullPointerException as host is null.");
         }
-        catch(NullPointerException npe) { /* ignore */ }
+        catch(final NullPointerException npe) { /* ignore */ }
 
         try {
             new ServerDetails(ServerDetails.TransportProtocol.HTTPS, "localhost", -10);
             fail("Should have thrown an IllegalArgumentException as the port is out of range.");
         }
-        catch(IllegalArgumentException iae) { /* ignore */ }
+        catch(final IllegalArgumentException iae) { /* ignore */ }
 
         try {
             new ServerDetails(ServerDetails.TransportProtocol.HTTPS, "localhost", 123456789);
             fail("Should have thrown an IllegalArgumentException as the port is out of range.");
         }
-        catch(IllegalArgumentException iae) { /* ignore */ }
+        catch(final IllegalArgumentException iae) { /* ignore */ }
 
         // Create one for real...
         final ServerDetails details = new ServerDetails(ServerDetails.TransportProtocol.HTTPS, "localhost", 10);
@@ -116,7 +116,7 @@ public class ServerDetailsTest {
         // Copy...
         final ServerDetails newDetails = new ServerDetails(details);
         
-        // Check everything was coppied across...
+        // Check everything was copied across...
         assertThat("protocol", newDetails.getProtocol(), is(equalTo(details.getProtocol())));
         assertThat("host", newDetails.getHost(), is(equalTo(details.getHost())));
         assertThat("port", newDetails.getPort(), is(equalTo(details.getPort())));
@@ -165,7 +165,7 @@ public class ServerDetailsTest {
             details.setPort(-10);
             fail("Should have thrown an IllegalArgumentException as port is out of range.");
         }
-        catch(IllegalArgumentException iae) {
+        catch(final IllegalArgumentException iae) {
             // Expected due to out of range port number...
         }
         
@@ -174,7 +174,7 @@ public class ServerDetailsTest {
             details.setPort(90000);
             fail("Should have thrown an IllegalArgumentException as port is out of range.");
         }
-        catch(IllegalArgumentException iae) {
+        catch(final IllegalArgumentException iae) {
             // Expected due to out of range port number...
         }
         
@@ -200,7 +200,7 @@ public class ServerDetailsTest {
             details.setCharsetName(null);
             fail("Should have thrown an IllegalArgumentException as charsetName is null.");
         }
-        catch(IllegalArgumentException iae) {
+        catch(final IllegalArgumentException iae) {
             // Expected...
         }
         
@@ -209,7 +209,7 @@ public class ServerDetailsTest {
             details.setCharsetName("_~@£$");
             fail("Should have thrown an IllegalCharsetNameException as charsetName is illegal.");
         }
-        catch(IllegalCharsetNameException icne) {
+        catch(final IllegalCharsetNameException icne) {
             // Expected...
         }
         
@@ -218,7 +218,7 @@ public class ServerDetailsTest {
             details.setCharsetName("wibble");
             fail("Should have thrown an UnsupportedCharsetException as charsetName is unsupported.");
         }
-        catch(UnsupportedCharsetException uce) {
+        catch(final UnsupportedCharsetException uce) {
             // Expected...
         }
     }
@@ -241,7 +241,7 @@ public class ServerDetailsTest {
         assertThat("Details should be equal to itself", details1.equals(details1), is(true));
         assertThat("Details should not be equal", details1.equals(details2), is(false));
         
-        // Change details2 to have the same name so tecxhnically they'return the same...
+        // Change details2 to have the same name so technically they return the same...
         details2.setHost("host1.example.com");
         assertThat("Details should be equal", details1.equals(details2), is(true));
         

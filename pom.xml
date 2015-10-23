@@ -147,7 +147,7 @@
     </build>
 
     <dependencies>
-        <!-- Compile dependancies... -->
+        <!-- Compile dependencies... -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -179,7 +179,7 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- Test dependancies... -->
+        <!-- Test dependencies... -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

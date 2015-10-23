@@ -21,7 +21,7 @@ public class DreRegenerateCommand extends IndexCommandImpl {
     public enum Type {
         REFERENCE_MEMORY_MAPPED("ReferenceMemoryMapped");
 
-        private String actual;
+        private final String actual;
 
         Type(final String actual) {
             this.actual = actual;

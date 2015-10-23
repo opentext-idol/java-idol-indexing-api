@@ -41,7 +41,7 @@ public class DreInitialCommand extends IndexCommandImpl {
     
     @Override
     public String getQueryString() {
-        // Get the query string comprising of all the other parameteres...
+        // Get the query string comprising of all the other parameters...
         final String queryString = super.getQueryString();
 
         try {
@@ -51,7 +51,7 @@ public class DreInitialCommand extends IndexCommandImpl {
                             ? urlCodec.encode(path, "UTF-8")
                             : urlCodec.encode(path, "UTF-8") + '&' + queryString;
         }
-        catch(UnsupportedEncodingException uee) {
+        catch(final UnsupportedEncodingException uee) {
             throw new IndexingException(uee);
         }
     }

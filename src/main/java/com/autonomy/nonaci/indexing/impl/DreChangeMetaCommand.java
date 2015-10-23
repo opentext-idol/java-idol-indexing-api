@@ -53,7 +53,7 @@ public class DreChangeMetaCommand extends IndexCommandImpl {
          */
         EXPIREDATE("expiredate");
 
-        private String actual;
+        private final String actual;
 
         Type(final String actual) {
             this.actual = actual;

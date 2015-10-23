@@ -235,7 +235,7 @@ public class DreExportRemoteCommand extends IndexCommandImpl {
      * You can enter one of the following options to specify how IDOL server handles duplicate text when it adds 
      * documents to the target IDOL server. Note that if you postfix any of these options with <strong>=2</strong>, the 
      * KillDuplicates process is applied to all IDOL server databases (rather than just the database into which the 
-     * currrent IDX or XML file is being indexed):
+     * current IDX or XML file is being indexed):
      * <dl>
      *   <dt><strong>NONE</strong></dt>
      *   <dd>Documents in IDOL server are never replaced with new documents.</dd>

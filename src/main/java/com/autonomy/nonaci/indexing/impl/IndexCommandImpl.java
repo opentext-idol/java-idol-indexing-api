@@ -50,7 +50,7 @@ public class IndexCommandImpl implements IndexCommand {
     }
 
     /**
-     * Convienience method for adding a parameter to the command.
+     * Convenience method for adding a parameter to the command.
      *
      * @param key The parameter key
      * @param Value The parameter value
@@ -61,7 +61,7 @@ public class IndexCommandImpl implements IndexCommand {
     }
 
     /**
-     * Convienience method for getting a parameter value from the command.
+     * Convenience method for getting a parameter value from the command.
      *
      * @param key The parameter key
      * @return The value of the command parameter
@@ -106,10 +106,12 @@ public class IndexCommandImpl implements IndexCommand {
         return returnValue;
     }
 
+    @Override
     public String getCommand() {
         return command;
     }
 
+    @Override
     public String getQueryString() {
         final List<NameValuePair> pairs = new ArrayList<NameValuePair>(parameters.size());
 
@@ -120,6 +122,7 @@ public class IndexCommandImpl implements IndexCommand {
         return URLEncodedUtils.format(pairs, "UTF-8");
     }
 
+    @Override
     public PostData getPostData() {
         return postData;
     }
