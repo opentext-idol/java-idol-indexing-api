@@ -9,9 +9,10 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
+import org.apache.http.entity.ContentType;
+
 import java.io.File;
 import java.nio.charset.Charset;
-import org.apache.http.entity.ContentType;
 
 /**
  * This implementation of the {@link com.autonomy.nonaci.indexing.PostData} interface can be used to send the contents

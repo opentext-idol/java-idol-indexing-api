@@ -9,18 +9,20 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
+import com.autonomy.nonaci.ServerDetails;
 import com.autonomy.nonaci.indexing.IndexCommand;
 import com.autonomy.nonaci.indexing.IndexingException;
-import com.autonomy.nonaci.ServerDetails;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import org.apache.http.impl.client.HttpClientBuilder;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import org.junit.Before;
-import org.junit.Test;
 
 /**
  * .

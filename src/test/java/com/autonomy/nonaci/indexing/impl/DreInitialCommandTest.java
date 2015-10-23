@@ -9,12 +9,14 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
+import com.autonomy.nonaci.indexing.IndexCommand;
+import org.junit.Test;
+
 import java.util.HashMap;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
-import org.junit.Test;
-import com.autonomy.nonaci.indexing.IndexCommand;
 
 /**
  * .

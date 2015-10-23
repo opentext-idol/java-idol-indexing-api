@@ -10,10 +10,11 @@
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
-import java.io.UnsupportedEncodingException;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Allows you to index IDX or XML files located on the same machine as IDOL server directly into an IDOL server. 

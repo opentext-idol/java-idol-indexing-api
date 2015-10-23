@@ -9,13 +9,14 @@
  */
 package com.autonomy.nonaci;
 
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 
 /**
  * Holds the protocol, host and port details of a non-ACI Server.

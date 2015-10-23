@@ -10,10 +10,11 @@
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
-import java.io.UnsupportedEncodingException;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Allows you to delete all data from your IDOL server's data index, and to reset the data index. Your configuration 

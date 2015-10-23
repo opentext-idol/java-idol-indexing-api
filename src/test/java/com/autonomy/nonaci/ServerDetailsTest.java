@@ -9,14 +9,16 @@
  */
 package com.autonomy.nonaci;
 
+import org.junit.Test;
+
 import java.nio.charset.IllegalCharsetNameException;
 import java.nio.charset.UnsupportedCharsetException;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.fail;
-import org.junit.Test;
 
 /**
  * .

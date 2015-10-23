@@ -10,14 +10,15 @@
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.PostData;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import org.apache.commons.lang3.Validate;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * A simple implementation of the {@link org.apache.http.HttpEntity} interface that proxies all calls to the underlying

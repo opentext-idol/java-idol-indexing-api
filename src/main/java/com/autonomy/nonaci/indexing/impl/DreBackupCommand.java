@@ -10,8 +10,9 @@
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
-import java.io.UnsupportedEncodingException;
 import org.apache.commons.codec.net.URLCodec;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Allows you to back up IDOL server's data index. This command copies all the IDOL server data index's *.DB files to a 

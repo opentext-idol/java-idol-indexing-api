@@ -9,13 +9,15 @@
  */
 package com.autonomy.nonaci.indexing;
 
+import org.junit.Test;
+
 import java.io.IOException;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.Assert.assertThat;
-import org.junit.Test;
 
 /**
  * JUnit tests for <tt>com.autonomy.nonaci.indexing.IndexingException</tt>.
