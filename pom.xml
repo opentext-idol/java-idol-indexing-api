@@ -18,7 +18,7 @@
 
     <groupId>com.hp.autonomy.idol</groupId>
     <artifactId>indexing-api</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Java IDOL Indexing API</name>
