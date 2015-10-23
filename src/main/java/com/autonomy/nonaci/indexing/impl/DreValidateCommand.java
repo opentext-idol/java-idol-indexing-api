@@ -1,26 +1,15 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * DreValidateCommand.java
- * Created on 14-Aug-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
-/**
- * .
- *
- * @author boba
- * @version $Revision$ $Date$
- */
 public class DreValidateCommand extends IndexCommandImpl {
 
     public enum Type {
         DISK_INDEX("DiskIndex"), NODE_TABLE("NodeTable");
 
-        private String actual;
+        private final String actual;
 
         Type(final String actual) {
             this.actual = actual;

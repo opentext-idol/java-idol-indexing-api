@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * DreExportIdxCommand.java
- * Created on 03-Jul-2008, 16:36:44
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -17,7 +12,6 @@ package com.autonomy.nonaci.indexing.impl;
  * specified in the configuration file is not used exactly if this would require a document section to be split.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreExportIdxCommand extends AbstractExportCommand {
 

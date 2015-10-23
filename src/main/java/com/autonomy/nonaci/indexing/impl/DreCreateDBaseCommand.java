@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * DreCreateDBaseCommand.java
- * Created on 25-Jun-2008, 17:04:08
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -16,7 +11,6 @@ import org.apache.commons.lang3.BooleanUtils;
  * subject or to store documents that are relevant to a particular user group).
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreCreateDBaseCommand extends IndexCommandImpl {
 

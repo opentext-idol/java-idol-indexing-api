@@ -1,22 +1,11 @@
 /*
- * $Id$
- *
- * Copyright (c) 2009 - 2014, Autonomy Systems Ltd.
- *
- * PostDataImpl.java
- * Created on 13-Nov-2009
- * Last modified by $Author$ on $Date$ 
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
 import com.autonomy.nonaci.indexing.PostData;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -27,17 +16,23 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.util.EntityUtils;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
+
 /**
  * This implementation of the {@link com.autonomy.nonaci.indexing.PostData} interface can be used to send the contents
  * of a {@link java.lang.String}, {@link java.io.File} or {@link java.io.InputStream}. It is backed by the appropriate
  * {@link org.apache.http.HttpEntity} implementation from the Apache {@link org.apache.http.client.HttpClient} library.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class PostDataImpl implements PostData {
 
-    private HttpEntity httpEntity;
+    private final HttpEntity httpEntity;
 
     public PostDataImpl(final String string) {
         this(string, null);
@@ -47,7 +42,7 @@ public class PostDataImpl implements PostData {
         try {
             httpEntity = new StringEntity(string, StringUtils.isBlank(charset) ? "UTF-8" : charset);
         }
-        catch(UnsupportedCharsetException uce) {
+        catch(final UnsupportedCharsetException uce) {
             throw new IndexingException("Unsupported charset specified, " + charset, uce);
         }
     }
@@ -99,38 +94,47 @@ public class PostDataImpl implements PostData {
         return returnValue;
     }
 
+    @Override
     public boolean isRepeatable() {
         return httpEntity.isRepeatable();
     }
 
+    @Override
     public boolean isChunked() {
         return httpEntity.isChunked();
     }
 
+    @Override
     public long getContentLength() {
         return httpEntity.getContentLength();
     }
 
+    @Override
     public String getContentType() {
         return (httpEntity.getContentType() == null) ? null : httpEntity.getContentType().getValue();
     }
 
+    @Override
     public String getContentEncoding() {
         return (httpEntity.getContentEncoding() == null) ? null : httpEntity.getContentEncoding().getValue();
     }
 
+    @Override
     public InputStream getContent() throws IOException {
         return httpEntity.getContent();
     }
 
+    @Override
     public void writeTo(final OutputStream outstream) throws IOException {
         httpEntity.writeTo(outstream);
     }
 
+    @Override
     public boolean isStreaming() {
         return httpEntity.isStreaming();
     }
 
+    @Override
     public void finish() throws IOException {
         EntityUtils.consume(httpEntity);
     }

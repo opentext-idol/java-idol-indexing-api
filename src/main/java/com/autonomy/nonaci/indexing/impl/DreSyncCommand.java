@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008, Autonomy Systems Ltd.
- *
- * DreSyncCommand.java
- * Created on 25-Jun-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -21,7 +16,6 @@ package com.autonomy.nonaci.indexing.impl;
  * Note these documents are flushed anyway when the <strong>MaxSyncDelay</strong> period you have configured expires. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreSyncCommand extends IndexCommandImpl {
 

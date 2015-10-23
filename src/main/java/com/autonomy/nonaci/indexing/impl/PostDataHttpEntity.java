@@ -1,30 +1,25 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * PostDataHttpEntity.java
- * Created on 09-Oct-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.PostData;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import org.apache.commons.lang3.Validate;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 /**
  * A simple implementation of the {@link org.apache.http.HttpEntity} interface that proxies all calls to the underlying
- * {@link com.autonomy.nonaci.indexing.PostData} implementaiton.
+ * {@link com.autonomy.nonaci.indexing.PostData} implementation.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class PostDataHttpEntity implements HttpEntity {
 
@@ -35,18 +30,22 @@ public class PostDataHttpEntity implements HttpEntity {
         this.postData = postData;
     }
 
+    @Override
     public boolean isRepeatable() {
         return postData.isRepeatable();
     }
 
+    @Override
     public boolean isChunked() {
         return postData.isChunked();
     }
 
+    @Override
     public long getContentLength() {
         return postData.getContentLength();
     }
 
+    @Override
     public Header getContentType() {
         Header header = null;
 
@@ -58,6 +57,7 @@ public class PostDataHttpEntity implements HttpEntity {
         return header;
     }
 
+    @Override
     public Header getContentEncoding() {
         Header header = null;
 
@@ -69,14 +69,17 @@ public class PostDataHttpEntity implements HttpEntity {
         return header;
     }
 
+    @Override
     public InputStream getContent() throws IOException {
         return postData.getContent();
     }
 
+    @Override
     public void writeTo(final OutputStream outstream) throws IOException {
         postData.writeTo(outstream);
     }
 
+    @Override
     public boolean isStreaming() {
         return postData.isStreaming();
     }
@@ -84,6 +87,7 @@ public class PostDataHttpEntity implements HttpEntity {
     /**
      * @deprecated Use {@link org.apache.http.util.EntityUtils#consume(org.apache.http.HttpEntity)} instead.
      */
+    @Override
     @Deprecated
     public void consumeContent() throws IOException {
         postData.finish();

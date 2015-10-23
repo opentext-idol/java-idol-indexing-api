@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2009, Autonomy Systems Ltd.
- *
- * DreRegenerateCommand.java
- * Created on 23-Jul-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -14,14 +9,13 @@ package com.autonomy.nonaci.indexing.impl;
  * a child in the hierarchy may be indexed before its parent. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreRegenerateCommand extends IndexCommandImpl {
 
     public enum Type {
         REFERENCE_MEMORY_MAPPED("ReferenceMemoryMapped");
 
-        private String actual;
+        private final String actual;
 
         Type(final String actual) {
             this.actual = actual;

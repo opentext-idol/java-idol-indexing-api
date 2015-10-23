@@ -1,19 +1,15 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * DreInitialCommand.java
- * Created on 25-Jun-2008, 16:37:46
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
-import java.io.UnsupportedEncodingException;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Allows you to delete all data from your IDOL server's data index, and to reset the data index. Your configuration 
@@ -22,7 +18,6 @@ import org.apache.commons.lang3.StringUtils;
  * You can also use the <strong>DREINITIAL</strong> command to restore backed up files to an IDOL server. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreInitialCommand extends IndexCommandImpl {
 
@@ -40,7 +35,7 @@ public class DreInitialCommand extends IndexCommandImpl {
     
     @Override
     public String getQueryString() {
-        // Get the query string comprising of all the other parameteres...
+        // Get the query string comprising of all the other parameters...
         final String queryString = super.getQueryString();
 
         try {
@@ -50,7 +45,7 @@ public class DreInitialCommand extends IndexCommandImpl {
                             ? urlCodec.encode(path, "UTF-8")
                             : urlCodec.encode(path, "UTF-8") + '&' + queryString;
         }
-        catch(UnsupportedEncodingException uee) {
+        catch(final UnsupportedEncodingException uee) {
             throw new IndexingException(uee);
         }
     }

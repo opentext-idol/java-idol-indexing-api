@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * DreExportRemoteCommand.java
- * Created on 03-Jul-2008, 20:17:29
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -21,7 +16,6 @@ import org.apache.commons.lang3.math.NumberUtils;
 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreExportRemoteCommand extends IndexCommandImpl {
 
@@ -235,7 +229,7 @@ public class DreExportRemoteCommand extends IndexCommandImpl {
      * You can enter one of the following options to specify how IDOL server handles duplicate text when it adds 
      * documents to the target IDOL server. Note that if you postfix any of these options with <strong>=2</strong>, the 
      * KillDuplicates process is applied to all IDOL server databases (rather than just the database into which the 
-     * currrent IDX or XML file is being indexed):
+     * current IDX or XML file is being indexed):
      * <dl>
      *   <dt><strong>NONE</strong></dt>
      *   <dd>Documents in IDOL server are never replaced with new documents.</dd>

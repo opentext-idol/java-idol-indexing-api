@@ -1,19 +1,15 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * DreAddCommand.java
- * Created on 20-Jun-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexingException;
-import java.io.UnsupportedEncodingException;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Allows you to index IDX or XML files located on the same machine as IDOL server directly into an IDOL server. 
@@ -27,7 +23,6 @@ import org.apache.commons.lang3.StringUtils;
  * fields they contain.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreAddCommand extends AbstractAddCommand {
 
@@ -43,14 +38,14 @@ public class DreAddCommand extends AbstractAddCommand {
     @Override
     public String getQueryString() {
         try {
-            // Get the query string comprising of all the other parameteres...
+            // Get the query string comprising of all the other parameters...
             final String queryString = super.getQueryString();
 
             return StringUtils.isNotBlank(queryString)
                     ? urlCodec.encode(indexFile, "UTF-8") + '&' + queryString
                     : urlCodec.encode(indexFile, "UTF-8");
         }
-        catch(UnsupportedEncodingException uee) {
+        catch(final UnsupportedEncodingException uee) {
             throw new IndexingException(uee);
         }
     }

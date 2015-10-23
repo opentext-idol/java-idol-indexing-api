@@ -1,32 +1,27 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * ServerDetails.java
- * Created on 30-Jul-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci;
 
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
+
 /**
  * Holds the protocol, host and port details of a non-ACI Server.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class ServerDetails {
 
     /** Holds the different types of transport protocol that can be used by ACI servers. */
-    public static enum TransportProtocol {HTTP, HTTPS}
+    public enum TransportProtocol {HTTP, HTTPS}
 
     /** Holds value of property protocol. Defaults to <tt>TransportProtocol.HTTP</tt>. */
     private TransportProtocol protocol = TransportProtocol.HTTP;

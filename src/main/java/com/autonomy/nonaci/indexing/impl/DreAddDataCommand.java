@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008, Autonomy Systems Ltd.
- *
- * DreAddDataCommand.java
- * Created on 03-Jul-2008, 14:03:07
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -25,7 +20,6 @@ package com.autonomy.nonaci.indexing.impl;
  * <strong>Note:</strong> This command requires a POST request method.
  * 
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreAddDataCommand extends AbstractAddCommand {
 

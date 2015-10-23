@@ -1,22 +1,11 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008 - 2014, Autonomy Systems Ltd.
- *
- * IndexCommandImpl.java
- * Created on 20-Jun-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.IndexCommand;
 import com.autonomy.nonaci.indexing.PostData;
-import java.io.File;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -26,12 +15,18 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.File;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 /** 
  * Core implementation of the <tt>IndexCommand</tt> interface. Provides methods to supply all the necessary information
  * to execute any index command. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class IndexCommandImpl implements IndexCommand {
 
@@ -49,7 +44,7 @@ public class IndexCommandImpl implements IndexCommand {
     }
 
     /**
-     * Convienience method for adding a parameter to the command.
+     * Convenience method for adding a parameter to the command.
      *
      * @param key The parameter key
      * @param Value The parameter value
@@ -60,7 +55,7 @@ public class IndexCommandImpl implements IndexCommand {
     }
 
     /**
-     * Convienience method for getting a parameter value from the command.
+     * Convenience method for getting a parameter value from the command.
      *
      * @param key The parameter key
      * @return The value of the command parameter
@@ -105,10 +100,12 @@ public class IndexCommandImpl implements IndexCommand {
         return returnValue;
     }
 
+    @Override
     public String getCommand() {
         return command;
     }
 
+    @Override
     public String getQueryString() {
         final List<NameValuePair> pairs = new ArrayList<NameValuePair>(parameters.size());
 
@@ -119,6 +116,7 @@ public class IndexCommandImpl implements IndexCommand {
         return URLEncodedUtils.format(pairs, "UTF-8");
     }
 
+    @Override
     public PostData getPostData() {
         return postData;
     }

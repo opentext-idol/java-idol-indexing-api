@@ -1,0 +1,30 @@
+<!--
+  ~ Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+  ~ Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
+  -->
+
+<document xmlns="http://maven.apache.org/changes/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+    <body>
+        <release version="3.0.0" date="2015-10-23" description="Initial FOSS release">
+            <action dev="Alex Scown" type="add">
+                Extracted from internal HP Autonomy VCS.
+            </action>
+        </release>
+        <release version="2.2.0" date="2014-11-19" description="Internal release">
+            <action dev="Bob Arnott" type="update">
+                Update dependencies and migrate to Java 6.
+            </action>
+        </release>
+        <release version="2.1.1" date="2014-06-19" description="Internal release">
+            <action dev="Bob Arnott" type="add">
+                New helper constructors in com.autonomy.nonaci.ServerDetails to allow setting of host and port details,
+                without having to use the property accessors.
+            </action>
+            <action dev="Bob Arnott" type="update">
+                Update dependencies.
+            </action>
+        </release>
+    </body>
+</document>

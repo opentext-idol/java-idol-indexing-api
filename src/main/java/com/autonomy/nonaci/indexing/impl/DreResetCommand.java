@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008, Autonomy Systems Ltd.
- *
- * DreResetCommand.java
- * Created on 04-Jul-2008, 10:17:58
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing.impl;
 
@@ -14,7 +9,6 @@ package com.autonomy.nonaci.indexing.impl;
  * force the IDOL server to read in the changes. No data is altered by this command.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreResetCommand extends IndexCommandImpl {
 
