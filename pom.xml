@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
-  - $Id$
-  - Author(s): boba
-  - Copyright (c) 2011 - 2013, Autonomy Systems Ltd.
-  - Description:
-  - Last modified by $Author$ On $Date$
+  ~ Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+  ~ Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
