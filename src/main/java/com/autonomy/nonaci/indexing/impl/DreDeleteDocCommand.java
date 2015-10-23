@@ -11,7 +11,6 @@ package com.autonomy.nonaci.indexing.impl;
  * command. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreDeleteDocCommand extends IndexCommandImpl {
 

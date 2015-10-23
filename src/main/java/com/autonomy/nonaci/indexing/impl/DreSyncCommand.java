@@ -16,7 +16,6 @@ package com.autonomy.nonaci.indexing.impl;
  * Note these documents are flushed anyway when the <strong>MaxSyncDelay</strong> period you have configured expires. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreSyncCommand extends IndexCommandImpl {
 

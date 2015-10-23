@@ -9,7 +9,6 @@ package com.autonomy.nonaci.indexing.impl;
  * a child in the hierarchy may be indexed before its parent. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreRegenerateCommand extends IndexCommandImpl {
 

@@ -21,7 +21,6 @@ package com.autonomy.nonaci.indexing.impl;
  * <strong>http://Hume:20000/action=IndexerGetStatus&index=41&IndexAction=restart</strong>
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreFlushAndPauseCommand extends IndexCommandImpl {
 

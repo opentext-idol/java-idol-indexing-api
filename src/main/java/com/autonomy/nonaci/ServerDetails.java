@@ -17,7 +17,6 @@ import java.nio.charset.UnsupportedCharsetException;
  * Holds the protocol, host and port details of a non-ACI Server.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class ServerDetails {
 

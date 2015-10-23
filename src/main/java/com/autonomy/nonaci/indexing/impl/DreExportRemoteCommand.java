@@ -16,7 +16,6 @@ import org.apache.commons.lang3.math.NumberUtils;
 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreExportRemoteCommand extends IndexCommandImpl {
 

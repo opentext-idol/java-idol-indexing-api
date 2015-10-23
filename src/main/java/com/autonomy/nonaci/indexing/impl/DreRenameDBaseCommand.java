@@ -8,7 +8,6 @@ package com.autonomy.nonaci.indexing.impl;
  * Allows you to rename an IDOL server database.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreRenameDBaseCommand extends IndexCommandImpl {
 

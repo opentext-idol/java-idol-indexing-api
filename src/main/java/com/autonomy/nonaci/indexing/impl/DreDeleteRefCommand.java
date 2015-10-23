@@ -8,7 +8,6 @@ package com.autonomy.nonaci.indexing.impl;
  * Allows you to delete one or more documents by their reference.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreDeleteRefCommand extends IndexCommandImpl {
 

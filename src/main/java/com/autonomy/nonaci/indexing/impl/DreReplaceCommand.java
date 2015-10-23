@@ -12,7 +12,6 @@ import org.apache.commons.lang3.BooleanUtils;
  * Use the <strong>DREREPLACE</strong> command to change the field values or delete fields from documents.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreReplaceCommand extends IndexCommandImpl {
 

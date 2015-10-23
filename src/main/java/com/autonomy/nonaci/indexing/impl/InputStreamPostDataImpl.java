@@ -14,7 +14,6 @@ import java.io.InputStream;
  * implementation doesn't do any chunking.
  *
  * @author boba
- * @version $Revision$ $Date$
  * @deprecated As of 2.0.0, use {@link PostDataImpl} instead
  */
 @Deprecated

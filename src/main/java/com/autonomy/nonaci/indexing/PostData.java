@@ -13,7 +13,6 @@ import java.io.OutputStream;
  * interface, but without any reference to other HttpClient specific classes or interfaces.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public interface PostData {
 

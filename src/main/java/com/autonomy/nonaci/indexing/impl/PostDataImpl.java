@@ -29,7 +29,6 @@ import java.nio.charset.UnsupportedCharsetException;
  * {@link org.apache.http.HttpEntity} implementation from the Apache {@link org.apache.http.client.HttpClient} library.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class PostDataImpl implements PostData {
 

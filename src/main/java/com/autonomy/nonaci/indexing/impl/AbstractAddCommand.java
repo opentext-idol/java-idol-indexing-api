@@ -11,7 +11,6 @@ import org.apache.commons.lang3.BooleanUtils;
  * their shared parameters.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public abstract class AbstractAddCommand extends IndexCommandImpl {
 

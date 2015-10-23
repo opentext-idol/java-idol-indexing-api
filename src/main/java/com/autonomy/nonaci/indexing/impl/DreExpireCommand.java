@@ -15,7 +15,6 @@ package com.autonomy.nonaci.indexing.impl;
  * document's database has no expiry time set), IDOL server does not expire the document.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreExpireCommand extends IndexCommandImpl {
 

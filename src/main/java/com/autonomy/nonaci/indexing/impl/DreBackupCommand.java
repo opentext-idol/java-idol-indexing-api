@@ -16,7 +16,6 @@ import java.io.UnsupportedEncodingException;
  * To restore backed up files, use the <strong>DREINITIAL</strong> command.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreBackupCommand extends IndexCommandImpl {
 

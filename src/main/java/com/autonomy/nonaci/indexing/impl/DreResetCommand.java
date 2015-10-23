@@ -9,7 +9,6 @@ package com.autonomy.nonaci.indexing.impl;
  * force the IDOL server to read in the changes. No data is altered by this command.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreResetCommand extends IndexCommandImpl {
 

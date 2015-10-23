@@ -20,7 +20,6 @@ import java.io.OutputStream;
  * {@link com.autonomy.nonaci.indexing.PostData} implementation.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class PostDataHttpEntity implements HttpEntity {
 

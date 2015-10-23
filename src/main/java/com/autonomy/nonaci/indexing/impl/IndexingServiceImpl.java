@@ -40,7 +40,6 @@ import java.util.regex.Pattern;
  * server by setting the details once, or multiple IDOL Servers by sending the details with every invocation of execute.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class IndexingServiceImpl implements IndexingService {
 

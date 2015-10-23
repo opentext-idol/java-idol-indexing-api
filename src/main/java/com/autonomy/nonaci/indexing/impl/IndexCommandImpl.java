@@ -27,7 +27,6 @@ import java.util.Map;
  * to execute any index command. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class IndexCommandImpl implements IndexCommand {
 

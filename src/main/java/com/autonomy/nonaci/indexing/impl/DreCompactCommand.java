@@ -15,7 +15,6 @@ package com.autonomy.nonaci.indexing.impl;
  * PreCompactionBackupPath</em> configuration parameter.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreCompactCommand extends IndexCommandImpl {
 

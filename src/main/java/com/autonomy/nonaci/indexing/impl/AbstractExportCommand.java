@@ -12,7 +12,6 @@ import org.apache.commons.lang3.math.NumberUtils;
  * for all their shared parameters.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public abstract class AbstractExportCommand extends IndexCommandImpl {
 

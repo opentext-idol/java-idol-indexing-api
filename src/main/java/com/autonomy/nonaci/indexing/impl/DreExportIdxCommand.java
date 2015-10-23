@@ -12,7 +12,6 @@ package com.autonomy.nonaci.indexing.impl;
  * specified in the configuration file is not used exactly if this would require a document section to be split.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreExportIdxCommand extends AbstractExportCommand {
 

@@ -11,7 +11,6 @@ package com.autonomy.nonaci.indexing.impl;
  * content type defaults to <tt>text/plain; charset=UTF-8</tt>.
  *
  * @author boba
- * @version $Revision$ $Date$
  * @deprecated As of 2.0.0, use {@link PostDataImpl} instead
  */
 @Deprecated

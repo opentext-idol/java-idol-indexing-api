@@ -9,7 +9,6 @@ package com.autonomy.nonaci.indexing;
  * includes constants for all the index commands and their parameters.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public interface IndexCommand {
 

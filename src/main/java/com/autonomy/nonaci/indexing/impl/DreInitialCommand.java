@@ -18,7 +18,6 @@ import java.io.UnsupportedEncodingException;
  * You can also use the <strong>DREINITIAL</strong> command to restore backed up files to an IDOL server. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreInitialCommand extends IndexCommandImpl {
 

@@ -9,7 +9,6 @@ package com.autonomy.nonaci.indexing.impl;
  * variety of methods and performing a specified action on such duplicates. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreDuplicateCommand extends IndexCommandImpl {
 

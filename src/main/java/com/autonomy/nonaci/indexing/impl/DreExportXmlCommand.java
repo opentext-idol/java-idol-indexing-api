@@ -18,7 +18,6 @@ package com.autonomy.nonaci.indexing.impl;
  *  </ul>
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreExportXmlCommand extends AbstractExportCommand {
     

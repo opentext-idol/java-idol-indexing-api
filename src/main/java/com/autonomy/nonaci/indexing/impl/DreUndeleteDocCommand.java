@@ -11,7 +11,6 @@ package com.autonomy.nonaci.indexing.impl;
  * a <strong>DRECOMPACT</strong> command which removes unused documents and space from IDOL server.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreUndeleteDocCommand extends IndexCommandImpl {
 

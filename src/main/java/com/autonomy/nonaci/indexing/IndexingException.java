@@ -8,7 +8,6 @@ package com.autonomy.nonaci.indexing;
  * This Exception is thrown when an error response is detected when sending an index command.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class IndexingException extends RuntimeException {
 

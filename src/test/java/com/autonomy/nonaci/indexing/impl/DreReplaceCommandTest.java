@@ -24,7 +24,6 @@ import static org.junit.Assert.assertThat;
  * place...
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreReplaceCommandTest {
 

@@ -10,7 +10,6 @@ package com.autonomy.nonaci.indexing.impl;
  * date.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreChangeMetaCommand extends IndexCommandImpl {
 

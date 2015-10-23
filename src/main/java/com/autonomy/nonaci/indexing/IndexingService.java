@@ -10,7 +10,6 @@ import com.autonomy.nonaci.ServerDetails;
  * Defines methods required to execute an index command.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public interface IndexingService {
 

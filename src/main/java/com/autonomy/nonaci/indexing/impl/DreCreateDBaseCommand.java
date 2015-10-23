@@ -11,7 +11,6 @@ import org.apache.commons.lang3.BooleanUtils;
  * subject or to store documents that are relevant to a particular user group).
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreCreateDBaseCommand extends IndexCommandImpl {
 

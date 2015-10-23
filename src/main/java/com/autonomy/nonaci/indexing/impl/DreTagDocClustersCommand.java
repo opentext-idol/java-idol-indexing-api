@@ -12,7 +12,6 @@ import org.apache.commons.lang3.math.NumberUtils;
  * TagSourceField</strong> might typically be <tt>DREREFERENCE</tt>. 
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreTagDocClustersCommand extends IndexCommandImpl {
 

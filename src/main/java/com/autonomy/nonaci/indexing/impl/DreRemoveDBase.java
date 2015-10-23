@@ -8,7 +8,6 @@ package com.autonomy.nonaci.indexing.impl;
  * Allows you to delete an IDOL server database and all the documents it contains.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreRemoveDBase extends IndexCommandImpl {
 

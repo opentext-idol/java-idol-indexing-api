@@ -4,12 +4,6 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
-/**
- * .
- *
- * @author boba
- * @version $Revision$ $Date$
- */
 public class DreValidateCommand extends IndexCommandImpl {
 
     public enum Type {

@@ -18,7 +18,6 @@ import static org.junit.Assert.assertThat;
  * JUnit tests for <tt>com.autonomy.nonaci.indexing.IndexingException</tt>.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class IndexingExceptionTest {
 

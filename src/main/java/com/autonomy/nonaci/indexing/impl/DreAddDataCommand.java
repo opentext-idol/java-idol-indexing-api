@@ -20,7 +20,6 @@ package com.autonomy.nonaci.indexing.impl;
  * <strong>Note:</strong> This command requires a POST request method.
  * 
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreAddDataCommand extends AbstractAddCommand {
 

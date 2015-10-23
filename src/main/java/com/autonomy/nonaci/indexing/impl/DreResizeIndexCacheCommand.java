@@ -17,7 +17,6 @@ import org.apache.commons.lang3.math.NumberUtils;
  * necessary can degrade indexing performance.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreResizeIndexCacheCommand extends IndexCommandImpl {
 

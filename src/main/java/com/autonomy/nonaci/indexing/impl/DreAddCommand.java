@@ -23,7 +23,6 @@ import java.io.UnsupportedEncodingException;
  * fields they contain.
  *
  * @author boba
- * @version $Revision$ $Date$
  */
 public class DreAddCommand extends AbstractAddCommand {
 

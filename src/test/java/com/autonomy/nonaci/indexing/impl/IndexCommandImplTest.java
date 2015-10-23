@@ -22,12 +22,6 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.sameInstance;
 
-/**
- * .
- *
- * @author boba
- * @version $Revision$ $Date$
- */
 public class IndexCommandImplTest {
 
     private IndexCommandImpl command; 

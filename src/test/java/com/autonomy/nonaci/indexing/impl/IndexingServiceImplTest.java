@@ -19,12 +19,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
-/**
- * .
- *
- * @author boba
- * @version $Revision$ $Date$
- */
 public class IndexingServiceImplTest {
 
     private IndexingServiceImpl indexingService;
