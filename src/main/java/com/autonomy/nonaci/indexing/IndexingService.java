@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2008, Autonomy Systems Ltd.
- *
- * IndexingService.java
- * Created on 19-Jun-2008
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci.indexing;
 

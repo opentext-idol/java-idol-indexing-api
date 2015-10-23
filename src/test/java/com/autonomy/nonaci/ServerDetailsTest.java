@@ -1,11 +1,6 @@
 /*
- * $Id$
- *
- * Copyright (c) 2013, Autonomy Systems Ltd.
- *
- * ServerDetailsTest.java
- * Created on 03/12/13, 17:39
- * Last modified by $Author$ on $Date$
+ * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+ * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.
  */
 package com.autonomy.nonaci;
 
