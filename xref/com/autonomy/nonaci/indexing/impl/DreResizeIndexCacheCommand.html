@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>DreResizeIndexCacheCommand xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../apidocs/com/autonomy/nonaci/indexing/impl/DreResizeIndexCacheCommand.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">package</strong> com.autonomy.nonaci.indexing.impl;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> org.apache.commons.lang3.math.NumberUtils;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_javadoccomment"> * Allows you to resize the IDOL server indexing cache without restarting the server.</em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_javadoccomment"> * The default size of the index cache at IDOL server startup is determined by the value of the &lt;strong&gt;</em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment"> * IndexCacheMaxSize&lt;/strong&gt; configuration parameter in the &lt;strong&gt;[IndexCache]&lt;/strong&gt; section of the IDOL server </em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment"> * configuration file. Using the &lt;strong&gt;DRERESIZEINDEXCACHE&lt;/strong&gt; command allows you to change the cache size </em>
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_javadoccomment"> * dynamically -- for example, to decrease it after performing a large bulk indexing job.</em>
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_javadoccomment"> * &lt;p /&gt;</em>
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_javadoccomment"> * &lt;strong&gt;Note:&lt;/strong&gt; Because the cache must be flushed before it is resized, invoking this command more often than </em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment"> * necessary can degrade indexing performance.</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * @author boba</em>
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../com/autonomy/nonaci/indexing/impl/DreResizeIndexCacheCommand.html">DreResizeIndexCacheCommand</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../com/autonomy/nonaci/indexing/impl/IndexCommandImpl.html">IndexCommandImpl</a> {
+<a class="jxr_linenumber" name="22" href="#22">22</a>  
+<a class="jxr_linenumber" name="23" href="#23">23</a>      <em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Creates a new instance of &lt;tt&gt;DreResizeIndexCacheCommand&lt;/tt&gt;. */</em>
+<a class="jxr_linenumber" name="24" href="#24">24</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../com/autonomy/nonaci/indexing/impl/DreResizeIndexCacheCommand.html">DreResizeIndexCacheCommand</a>() {
+<a class="jxr_linenumber" name="25" href="#25">25</a>          <strong class="jxr_keyword">super</strong>(CMD_DRERESIZEINDEXCACHE);
+<a class="jxr_linenumber" name="26" href="#26">26</a>      }
+<a class="jxr_linenumber" name="27" href="#27">27</a>  
+<a class="jxr_linenumber" name="28" href="#28">28</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">     * @return If the return value is &lt;tt&gt;-1&lt;/tt&gt; this indicates that the property hasn't been set.</em>
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="31" href="#31">31</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getIndexCacheMaxSize() {
+<a class="jxr_linenumber" name="32" href="#32">32</a>          <strong class="jxr_keyword">return</strong> NumberUtils.toInt(get(PARAM_INDEX_CACHE_MAX_SIZE), -1);
+<a class="jxr_linenumber" name="33" href="#33">33</a>      }
+<a class="jxr_linenumber" name="34" href="#34">34</a>  
+<a class="jxr_linenumber" name="35" href="#35">35</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment">     * Specify the desired size (in Kb) for the cache index. If the full requested amount is not available, the system </em>
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment">     * will attempt to allocate as much of it as possible.</em>
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_javadoccomment">     * @param indexCacheMaxSize The new cache size.</em>
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">     * @throws java.lang.IllegalArgumentException If the specified value is out of range (10240 &lt; &lt;tt&gt;indexCacheMaxSize</em>
+<a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">     * &lt;/tt&gt; &lt; 2048000).</em>
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setIndexCacheMaxSize(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> indexCacheMaxSize) {
+<a class="jxr_linenumber" name="44" href="#44">44</a>          <strong class="jxr_keyword">if</strong>((indexCacheMaxSize &lt; 10240) || (indexCacheMaxSize &gt; 2048000)) {
+<a class="jxr_linenumber" name="45" href="#45">45</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"The specified indexCacheMaxSize is out of range. The allowed range is 10240 &lt; indexCacheMaxSize &lt; 2048000."</span>);
+<a class="jxr_linenumber" name="46" href="#46">46</a>          }
+<a class="jxr_linenumber" name="47" href="#47">47</a>          
+<a class="jxr_linenumber" name="48" href="#48">48</a>          put(PARAM_INDEX_CACHE_MAX_SIZE, String.valueOf(indexCacheMaxSize));
+<a class="jxr_linenumber" name="49" href="#49">49</a>      }
+<a class="jxr_linenumber" name="50" href="#50">50</a>  
+<a class="jxr_linenumber" name="51" href="#51">51</a>  } <em class="jxr_comment">// End of class DreResizeIndexCacheCommand...</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

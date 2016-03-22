@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>DreDeleteDocCommand xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../apidocs/com/autonomy/nonaci/indexing/impl/DreDeleteDocCommand.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2008-2015 Hewlett-Packard Development Company, L.P.</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License.</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">package</strong> com.autonomy.nonaci.indexing.impl;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <em class="jxr_javadoccomment"> * Allows you to identify individual documents and/or ranges of documents by their ID, and delete them from IDOL server.</em>
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_javadoccomment"> * &lt;p /&gt;</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_javadoccomment"> * To restore a document that was deleted using &lt;strong&gt;DREDELETEDOC&lt;/strong&gt;, use the &lt;strong&gt;DREUNDELETEDOC&lt;/strong&gt; </em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_javadoccomment"> * command. </em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment"> * @author boba</em>
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../com/autonomy/nonaci/indexing/impl/DreDeleteDocCommand.html">DreDeleteDocCommand</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../com/autonomy/nonaci/indexing/impl/IndexCommandImpl.html">IndexCommandImpl</a> {
+<a class="jxr_linenumber" name="16" href="#16">16</a>  
+<a class="jxr_linenumber" name="17" href="#17">17</a>      <em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Creates a new instance of <a href="../../../../../com/autonomy/nonaci/indexing/impl/DreDeleteDocCommand.html">DreDeleteDocCommand</a> */</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../com/autonomy/nonaci/indexing/impl/DreDeleteDocCommand.html">DreDeleteDocCommand</a>() {
+<a class="jxr_linenumber" name="19" href="#19">19</a>          <strong class="jxr_keyword">super</strong>(CMD_DREDELETEDOC);
+<a class="jxr_linenumber" name="20" href="#20">20</a>      }
+<a class="jxr_linenumber" name="21" href="#21">21</a>  
+<a class="jxr_linenumber" name="22" href="#22">22</a>      <strong class="jxr_keyword">public</strong> String getDocs() {
+<a class="jxr_linenumber" name="23" href="#23">23</a>          <strong class="jxr_keyword">return</strong> get(PARAM_DOCS);
+<a class="jxr_linenumber" name="24" href="#24">24</a>      }
+<a class="jxr_linenumber" name="25" href="#25">25</a>  
+<a class="jxr_linenumber" name="26" href="#26">26</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <em class="jxr_javadoccomment">     * Specify one or more individual documents and / or a range of documents that you want to delete. You can use the </em>
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <em class="jxr_javadoccomment">     * following formats to do this (if you want to combine the two formats you must separate them with plus symbols </em>
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">     * with no spaces before or after a plus symbol):</em>
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">     * &lt;dl&gt;</em>
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment">     *   &lt;dt&gt;doc IDs&lt;/dt&gt;</em>
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <em class="jxr_javadoccomment">     *   &lt;dd&gt;Specify the IDs of one or more documents. If you want to specify multiple document IDs, you must separate </em>
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <em class="jxr_javadoccomment">     *       them with plus symbols (there must be no space before or after a plus symbol).&lt;/dd&gt;</em>
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment">     *   &lt;dt&gt;range=[&amp;lt;first doc&amp;gt;,&amp;lt;last doc&amp;gt;]&lt;/dt&gt;</em>
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment">     *   &lt;dd&gt;Enter the document ID of the first and last document in a range of documents that you want to delete. You </em>
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment">     *       can delete up to 5000 documents at a time.&lt;/dd&gt;</em>
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment">     * &lt;/dl&gt;</em>
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_javadoccomment">     * @param docs The IDs of the documents to be deleted.</em>
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setDocs(<strong class="jxr_keyword">final</strong> String docs) {
+<a class="jxr_linenumber" name="42" href="#42">42</a>          put(PARAM_DOCS, docs);
+<a class="jxr_linenumber" name="43" href="#43">43</a>      }
+<a class="jxr_linenumber" name="44" href="#44">44</a>  
+<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">public</strong> String getStateId() {
+<a class="jxr_linenumber" name="46" href="#46">46</a>          <strong class="jxr_keyword">return</strong> get(PARAM_STATE_ID);
+<a class="jxr_linenumber" name="47" href="#47">47</a>      }
+<a class="jxr_linenumber" name="48" href="#48">48</a>  
+<a class="jxr_linenumber" name="49" href="#49">49</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment">     * Enter the name of a state token (created earlier with the &lt;strong&gt;StoreState&lt;/strong&gt; parameter of the &lt;strong&gt;</em>
+<a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment">     * Query&lt;/strong&gt;, &lt;strong&gt;Suggest&lt;/strong&gt;, or &lt;strong&gt;SuggestOnText&lt;/strong&gt; action) that lists the documents do </em>
+<a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment">     * be deleted.</em>
+<a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">     * &lt;p /&gt;</em>
+<a class="jxr_linenumber" name="54" href="#54">54</a>  <em class="jxr_javadoccomment">     * If you specify the token name only, all documents listed in the token are deleted. If you add a (zero-based) </em>
+<a class="jxr_linenumber" name="55" href="#55">55</a>  <em class="jxr_javadoccomment">     * index range -- or individual numbers separated by plus signs -- in square brackets after the token name, only </em>
+<a class="jxr_linenumber" name="56" href="#56">56</a>  <em class="jxr_javadoccomment">     * that range or set of documents is deleted. (Note that you must list the entries in increasing numerical order.)</em>
+<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="58" href="#58">58</a>  <em class="jxr_javadoccomment">     * @param stateId The name of a state token that specifies the documents to be deleted.</em>
+<a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="60" href="#60">60</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setStateId(<strong class="jxr_keyword">final</strong> String stateId) {
+<a class="jxr_linenumber" name="61" href="#61">61</a>          put(PARAM_STATE_ID, stateId);
+<a class="jxr_linenumber" name="62" href="#62">62</a>      }
+<a class="jxr_linenumber" name="63" href="#63">63</a>  
+<a class="jxr_linenumber" name="64" href="#64">64</a>  } <em class="jxr_comment">// End of class DreDeleteDocCommand...</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+
