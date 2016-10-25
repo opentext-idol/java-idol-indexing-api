@@ -26,7 +26,7 @@ public class DreInitialCommandTest {
         command.setPath("test");
         assertThat(command.getQueryString(), is(equalTo("test&" + IndexCommand.PARAM_PRIORITY + "=10")));
 
-        command.setParameters(new HashMap<String, String>());
+        command.setParameters(new HashMap<>());
         assertThat(command.getQueryString(), is(equalTo("test")));
     }
 

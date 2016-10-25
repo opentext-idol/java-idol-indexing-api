@@ -84,7 +84,7 @@ public class IndexCommandImplTest {
         assertThat(command.getParameters(), is(notNullValue()));
         assertThat(command.getParameters().size(), is(0));
 
-        final Map<String, String> parameters = new HashMap<String, String>();
+        final Map<String, String> parameters = new HashMap<>();
         parameters.put("wibble", "wobble");
         command.setParameters(parameters);
 

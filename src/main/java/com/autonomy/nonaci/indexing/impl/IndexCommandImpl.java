@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /** 
  * Core implementation of the <tt>IndexCommand</tt> interface. Provides methods to supply all the necessary information
@@ -34,7 +35,7 @@ public class IndexCommandImpl implements IndexCommand {
     private final String command;
 
     /** Holds the parameters to be sent as part of the URI. */
-    private Map<String, String> parameters = new LinkedHashMap<String, String>();
+    private Map<String, String> parameters = new LinkedHashMap<>();
 
     /** If the index command requires POST content, then it should be contained in this. */
     private PostData postData;
@@ -107,11 +108,9 @@ public class IndexCommandImpl implements IndexCommand {
 
     @Override
     public String getQueryString() {
-        final List<NameValuePair> pairs = new ArrayList<NameValuePair>(parameters.size());
+        final List<NameValuePair> pairs = new ArrayList<>(parameters.size());
 
-        for(final Map.Entry<String, String> entry : parameters.entrySet()) {
-            pairs.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
-        }
+        pairs.addAll(parameters.entrySet().stream().map(entry -> new BasicNameValuePair(entry.getKey(), entry.getValue())).collect(Collectors.toList()));
 
         return URLEncodedUtils.format(pairs, "UTF-8");
     }
@@ -154,11 +153,11 @@ public class IndexCommandImpl implements IndexCommand {
     }
 
     public Map<String, String> getParameters() {
-        return new LinkedHashMap<String, String>(parameters);
+        return new LinkedHashMap<>(parameters);
     }
 
     public void setParameters(final Map<String, String> parameters) {
-        this.parameters = (parameters == null) ? new LinkedHashMap<String, String>() : new LinkedHashMap<String, String>(parameters);
+        this.parameters = (parameters == null) ? new LinkedHashMap<>() : new LinkedHashMap<>(parameters);
     }
 
 } // End of class IndexCommandImpl...

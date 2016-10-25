@@ -35,7 +35,7 @@ public class IndexingServiceImplTest {
     @Test
     @SuppressWarnings("unchecked")
     public void testExecuteCommand() throws IndexingException {
-        final Map<String, String> parameters = new HashMap<String, String>(1);
+        final Map<String, String> parameters = new HashMap<>(1);
         parameters.put(IndexCommand.PARAM_DRE_DBNAME, UUID.randomUUID().toString());
 
 //        final IndexCommandImpl command = new IndexCommandImpl(IndexCommand.CMD_DREINITIAL);

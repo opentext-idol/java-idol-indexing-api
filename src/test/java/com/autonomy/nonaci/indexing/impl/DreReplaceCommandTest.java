@@ -52,7 +52,7 @@ public class DreReplaceCommandTest {
         assertThat("parameters", command.getParameters().isEmpty(), is(true));
 
         // Set some parameters...
-        final Map<String, String> parameters = new LinkedHashMap<String, String>();
+        final Map<String, String> parameters = new LinkedHashMap<>();
         parameters.put(IndexCommand.PARAM_DATABASE_MATCH, "test");
         parameters.put(IndexCommand.PARAM_MULTIPLE_VALUES, "true");
         parameters.put(IndexCommand.PARAM_REPLACE_ALL_REFS, "true");
