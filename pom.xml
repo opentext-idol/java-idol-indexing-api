@@ -53,6 +53,12 @@
             <organization>HP</organization>
             <organizationUrl>http://www.hp.com</organizationUrl>
         </developer>
+        <developer>
+            <name>Will Byrne</name>
+            <email>will.byrne@hpe.com</email>
+            <organization>Hewlett Packard Enterprise</organization>
+            <organizationUrl>http://www.hpe.com</organizationUrl>
+        </developer>
     </developers>
 
     <scm>
