@@ -34,7 +34,7 @@ index job is returned.
 
     final int indexId = indexingService.executeCommand(command);
 
-Use the [Java ACI API](https://github.com/hpautonomy/java-aci-api-ng) to track the status of the job.
+Use the [Java ACI API](https://github.com/microfocus-idol/java-aci-api-ng) to track the status of the job.
 
 ## Migration to FOSS Version
 There are no substantial differences between the open source version and previous versions.

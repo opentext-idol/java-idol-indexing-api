@@ -36,7 +36,7 @@
     <custom>
         <fluidoSkin>
             <gitHub>
-                <projectId>hpautonomy/java-idol-indexing-api</projectId>
+                <projectId>microfocus-idol/java-idol-indexing-api</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
                 <ribbonColor>gray</ribbonColor>
             </gitHub>

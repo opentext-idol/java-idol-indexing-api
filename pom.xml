@@ -26,8 +26,8 @@
     <inceptionYear>2008</inceptionYear>
 
     <organization>
-        <name>Hewlett-Packard Development Company, L.P.</name>
-        <url>http://www.hp.com/</url>
+        <name>Micro Focus</name>
+        <url>http://www.microfocus.com</url>
     </organization>
 
     <licenses>
@@ -50,26 +50,28 @@
         <developer>
             <name>Alex Scown</name>
             <email>alex.scown@hpe.com</email>
-            <organization>HP</organization>
-            <organizationUrl>http://www.hp.com</organizationUrl>
         </developer>
         <developer>
             <name>Will Byrne</name>
             <email>will.byrne@hpe.com</email>
-            <organization>Hewlett Packard Enterprise</organization>
-            <organizationUrl>http://www.hpe.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Tung Jin Chew</name>
+            <email>tung-jin.chew@microfocus.com</email>
+            <organization>Micro Focus</organization>
+            <organizationUrl>http://www.microfocus.com</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:hpautonomy/java-idol-indexing-api.git</connection>
-        <developerConnection>scm:git:git@github.com:hpautonomy/java-idol-indexing-api.git</developerConnection>
-        <url>git@github.com:hpautonomy/java-idol-indexing-api.git</url>
+        <connection>scm:git:git@github.com:microfocus-idol/java-idol-indexing-api.git</connection>
+        <developerConnection>scm:git:git@github.com:microfocus-idol/java-idol-indexing-api.git</developerConnection>
+        <url>git@github.com:microfocus-idol/java-idol-indexing-api.git</url>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/hpautonomy/java-idol-indexing-api/issues</url>
+        <url>https://github.com/microfocus-idol/java-idol-indexing-api/issues</url>
     </issueManagement>
 
     <properties>
