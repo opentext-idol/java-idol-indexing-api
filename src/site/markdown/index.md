@@ -5,7 +5,7 @@ This is a Java API for indexing documents into IDOL servers.
 ## About
 IDOL servers use an index port for indexing content. This library provides a Java API for performing this task.
 
-Previous versions were available as jar files from HP Autonomy customer support.
+Previous versions were available as jar files from customer support.
 
 ## Usage
 java-idol-indexing-api is available from the central Maven repository.
@@ -47,6 +47,7 @@ branch - the master branch is for stable code only.
 Yes.
 
 ## License
-Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
+
+(c) Copyright 2008-2015 Micro Focus or one of its affiliates.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the License.

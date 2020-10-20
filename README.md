@@ -7,7 +7,7 @@ A Java API for indexing into IDOL servers.
 ## About
 IDOL servers use an index port for indexing content. This library provides a Java API for performing this task.
 
-Previous versions were available as jar files from HPE customer support.
+Previous versions were available as jar files from customer support.
 
 ## Usage
 java-idol-indexing-api is available from the central Maven repository.
@@ -31,8 +31,7 @@ branch - the master branch is for stable code only.
 Yes.
 
 ## License
-Copyright 2008-2015 Hewlett-Packard Development Company, L.P.
-Copyright 2015-2016 Hewlett Packard Enterprise Development LP
-Copyright 2017-2018 Micro Focus International plc.
+
+(c) Copyright 2008-2018 Micro Focus or one of its affiliates.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the License.
