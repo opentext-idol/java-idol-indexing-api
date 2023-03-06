@@ -35,8 +35,8 @@
     <inceptionYear>2008</inceptionYear>
 
     <organization>
-        <name>Micro Focus</name>
-        <url>http://www.microfocus.com</url>
+        <name>OpenText</name>
+        <url>https://www.opentext.com/</url>
     </organization>
 
     <licenses>
@@ -58,17 +58,12 @@
         </developer>
         <developer>
             <name>Alex Scown</name>
-            <email>alex.scown@hpe.com</email>
         </developer>
         <developer>
             <name>Will Byrne</name>
-            <email>will.byrne@hpe.com</email>
         </developer>
         <developer>
             <name>Tung Jin Chew</name>
-            <email>tung-jin.chew@microfocus.com</email>
-            <organization>Micro Focus</organization>
-            <organizationUrl>http://www.microfocus.com</organizationUrl>
         </developer>
     </developers>
 

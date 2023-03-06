@@ -48,6 +48,6 @@ Yes.
 
 ## License
 
-(c) Copyright 2008-2015 Micro Focus or one of its affiliates.
+(c) Copyright 2008-2015 OpenText or one of its affiliates.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the License.
