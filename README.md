@@ -2,8 +2,6 @@
 
 A Java API for indexing into IDOL servers.
 
-[![Build Status](https://travis-ci.org/microfocus-idol/java-idol-indexing-api.svg?branch=master)](https://travis-ci.org/microfocus-idol/java-idol-indexing-api)
-
 ## About
 IDOL servers use an index port for indexing content. This library provides a Java API for performing this task.
 
@@ -18,7 +16,7 @@ java-idol-indexing-api is available from the central Maven repository.
         <version>3.0.0</version>
     </dependency>
 
-For more documentation, see the project homepage [here](http://microfocus-idol.github.io/java-idol-indexing-api).
+For more documentation, see the project homepage [here](http://opentext-idol.github.io/java-idol-indexing-api).
 
 ## Migration to FOSS Version
 There are no substantial differences between the open source version and previous versions.
@@ -32,6 +30,6 @@ Yes.
 
 ## License
 
-(c) Copyright 2008-2018 OpenText or one of its affiliates.
+Copyright 2008-2018 OpenText or one of its affiliates.
 
 Licensed under the MIT License (the "License"); you may not use this project except in compliance with the License.
