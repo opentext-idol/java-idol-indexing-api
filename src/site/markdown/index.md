@@ -13,7 +13,7 @@ java-idol-indexing-api is available from the central Maven repository.
     <dependency>
         <groupId>com.hp.autonomy.idol</groupId>
         <artifactId>indexing-api</artifactId>
-        <version>3.0.0</version>
+        <version>3.2.0</version>
     </dependency>
 
 The primary means of interaction is the IndexingService. An IndexingServiceImpl can either be created with the host and index 
