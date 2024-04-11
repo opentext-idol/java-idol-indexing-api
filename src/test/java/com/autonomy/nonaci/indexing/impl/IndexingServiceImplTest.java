@@ -16,7 +16,7 @@ package com.autonomy.nonaci.indexing.impl;
 import com.autonomy.nonaci.ServerDetails;
 import com.autonomy.nonaci.indexing.IndexCommand;
 import com.autonomy.nonaci.indexing.IndexingException;
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.junit.Before;
 import org.junit.Test;
 

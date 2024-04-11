@@ -13,12 +13,11 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
-import com.autonomy.nonaci.indexing.IndexingException;
-import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Allows you to index IDX or XML files located on the same machine as IDOL server directly into an IDOL server. 
@@ -36,9 +35,7 @@ import java.io.UnsupportedEncodingException;
 public class DreAddCommand extends AbstractAddCommand {
 
     private String indexFile;
-    
-    private final URLCodec urlCodec = new URLCodec();
-    
+
     /** Creates a new instance of <tt>DreAddCommand</tt>. */
     public DreAddCommand() {
         super(CMD_DREADD);
@@ -46,17 +43,12 @@ public class DreAddCommand extends AbstractAddCommand {
     
     @Override
     public String getQueryString() {
-        try {
-            // Get the query string comprising of all the other parameters...
-            final String queryString = super.getQueryString();
+        // Get the query string comprising of all the other parameters...
+        final String queryString = super.getQueryString();
 
-            return StringUtils.isNotBlank(queryString)
-                    ? urlCodec.encode(indexFile, "UTF-8") + '&' + queryString
-                    : urlCodec.encode(indexFile, "UTF-8");
-        }
-        catch(final UnsupportedEncodingException uee) {
-            throw new IndexingException(uee);
-        }
+        return StringUtils.isNotBlank(queryString)
+                ? URLEncoder.encode(indexFile, StandardCharsets.UTF_8) + '&' + queryString
+                : URLEncoder.encode(indexFile, StandardCharsets.UTF_8);
     }
     
     public String getIndexFile() {

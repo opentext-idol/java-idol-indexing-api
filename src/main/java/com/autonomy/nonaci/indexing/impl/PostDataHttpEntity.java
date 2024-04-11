@@ -15,27 +15,28 @@ package com.autonomy.nonaci.indexing.impl;
 
 import com.autonomy.nonaci.indexing.PostData;
 import org.apache.commons.lang3.Validate;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.protocol.HTTP;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.HttpHeaders;
+import org.apache.hc.core5.http.io.entity.AbstractHttpEntity;
+import org.apache.hc.core5.http.message.BasicHeader;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * A simple implementation of the {@link org.apache.http.HttpEntity} interface that proxies all calls to the underlying
+ * A simple implementation of the {@link HttpEntity} interface that proxies all calls to the underlying
  * {@link com.autonomy.nonaci.indexing.PostData} implementation.
  *
  * @author boba
  */
-public class PostDataHttpEntity implements HttpEntity {
+public class PostDataHttpEntity extends AbstractHttpEntity {
 
     private final PostData postData;
 
     public PostDataHttpEntity(final PostData postData) {
-        Validate.notNull(postData, "postData must not be null.");
+        super(postData.getContentType(), postData.getContentEncoding(), postData.isChunked());
         this.postData = postData;
     }
 
@@ -45,37 +46,8 @@ public class PostDataHttpEntity implements HttpEntity {
     }
 
     @Override
-    public boolean isChunked() {
-        return postData.isChunked();
-    }
-
-    @Override
     public long getContentLength() {
         return postData.getContentLength();
-    }
-
-    @Override
-    public Header getContentType() {
-        Header header = null;
-
-        final String ctString = postData.getContentType();
-        if(ctString != null) {
-            header = new BasicHeader(HTTP.CONTENT_TYPE, ctString);
-        }
-        
-        return header;
-    }
-
-    @Override
-    public Header getContentEncoding() {
-        Header header = null;
-
-        final String ceString = postData.getContentEncoding();
-        if(ceString != null) {
-            header = new BasicHeader(HTTP.CONTENT_ENCODING, ceString);
-        }
-
-        return header;
     }
 
     @Override
@@ -93,12 +65,8 @@ public class PostDataHttpEntity implements HttpEntity {
         return postData.isStreaming();
     }
 
-    /**
-     * @deprecated Use {@link org.apache.http.util.EntityUtils#consume(org.apache.http.HttpEntity)} instead.
-     */
     @Override
-    @Deprecated
-    public void consumeContent() throws IOException {
+    public void close() throws IOException {
         postData.finish();
     }
 

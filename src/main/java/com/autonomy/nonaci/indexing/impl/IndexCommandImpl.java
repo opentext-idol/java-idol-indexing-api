@@ -20,17 +20,17 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.message.BasicNameValuePair;
+import org.apache.hc.core5.http.NameValuePair;
+import org.apache.hc.core5.http.message.BasicNameValuePair;
+import org.apache.hc.core5.net.URLEncodedUtils;
 
 import java.io.File;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /** 
  * Core implementation of the <tt>IndexCommand</tt> interface. Provides methods to supply all the necessary information
@@ -119,9 +119,10 @@ public class IndexCommandImpl implements IndexCommand {
     public String getQueryString() {
         final List<NameValuePair> pairs = new ArrayList<>(parameters.size());
 
-        pairs.addAll(parameters.entrySet().stream().map(entry -> new BasicNameValuePair(entry.getKey(), entry.getValue())).collect(Collectors.toList()));
+        pairs.addAll(parameters.entrySet().stream()
+                .map(entry -> new BasicNameValuePair(entry.getKey(), entry.getValue())).toList());
 
-        return URLEncodedUtils.format(pairs, "UTF-8");
+        return URLEncodedUtils.format(pairs, StandardCharsets.UTF_8);
     }
 
     @Override
@@ -169,4 +170,4 @@ public class IndexCommandImpl implements IndexCommand {
         this.parameters = (parameters == null) ? new LinkedHashMap<>() : new LinkedHashMap<>(parameters);
     }
 
-} // End of class IndexCommandImpl...
+}

@@ -20,13 +20,12 @@ import com.autonomy.nonaci.indexing.IndexingService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.client5.http.classic.HttpClient;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.core5.http.HttpResponse;
+import org.apache.hc.core5.net.URIBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,17 +33,18 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Core implementation of the {@link com.autonomy.nonaci.indexing.IndexingService} interface. This implementation uses
- * the Apache {@link org.apache.http.client.HttpClient} library to do the actual communication with the IDOL's index
+ * Core implementation of the {@link IndexingService} interface. This implementation uses
+ * the Apache {@link HttpClient} library to do the actual communication with the IDOL's index
  * port.
  * <p/>
- * The {@link org.apache.http.client.HttpClient} instance to be used should be set before calling either of the execute
- * methods. The {@link com.autonomy.nonaci.ServerDetails} can either be set before calling the execute method, or
+ * The {@link HttpClient} instance to be used should be set before calling either of the execute
+ * methods. The {@link ServerDetails} can either be set before calling the execute method, or
  * optionally sent as a method parameter to the execute method. This allows the API to be set up to talk to a single IDOL
  * server by setting the details once, or multiple IDOL Servers by sending the details with every invocation of execute.
  *
@@ -155,8 +155,6 @@ public class IndexingServiceImpl implements IndexingService {
         Validate.notNull(command.getCommand(), "You must set a valid index command to execute");
         Validate.notNull(httpClient, "You must set httpClient before executing commands");
 
-        HttpResponse httpResponse = null;
-
         try {
             // Create the HTTP method to use...
             final HttpUriRequest httpRequest = (command.getPostData() == null)
@@ -166,14 +164,12 @@ public class IndexingServiceImpl implements IndexingService {
             LOGGER.debug("Executing a {} index command...", command.getCommand());
 
             // Execute the command...
-            httpResponse = httpClient.execute(httpRequest);
-
-            LOGGER.debug("Successfully executed the index command, HTTP status - {}...", httpResponse.getStatusLine().getStatusCode());
-
-            // Get the response...
-            final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            httpResponse.getEntity().writeTo(baos);
-            final String response = baos.toString("UTF-8");
+            final String response = httpClient.execute(httpRequest, httpResponse -> {
+                LOGGER.debug("Successfully executed the index command, HTTP status - {}...", httpResponse.getCode());
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                httpResponse.getEntity().writeTo(baos);
+                return baos.toString(StandardCharsets.UTF_8);
+            });
 
             if(!response.contains("INDEXID")) {
                 throw new IndexingException(response.trim());
@@ -192,17 +188,6 @@ public class IndexingServiceImpl implements IndexingService {
         }
         catch(final URISyntaxException urise) {
             throw new IndexingException("Unable to construct the Index command URI.", urise);
-        }
-        finally {
-            try {
-                if(httpResponse != null) {
-                    // Release the HTTP connection...
-                    EntityUtils.consume(httpResponse.getEntity());
-                }
-            }
-            catch(final IOException ioe) {
-                LOGGER.error("Unable to consume any remaining content from the IndexCommand response.", ioe);
-            }
         }
     }
 

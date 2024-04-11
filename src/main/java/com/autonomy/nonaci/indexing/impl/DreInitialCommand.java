@@ -13,12 +13,11 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
-import com.autonomy.nonaci.indexing.IndexingException;
-import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Allows you to delete all data from your IDOL server's data index, and to reset the data index. Your configuration 
@@ -32,8 +31,6 @@ public class DreInitialCommand extends IndexCommandImpl {
 
     /** The full path to the data backup. */
     private String path;
-    
-    private final URLCodec urlCodec = new URLCodec();
 
     /**
      * Default constructor...
@@ -47,16 +44,11 @@ public class DreInitialCommand extends IndexCommandImpl {
         // Get the query string comprising of all the other parameters...
         final String queryString = super.getQueryString();
 
-        try {
-            return (StringUtils.isBlank(path))
-                    ? queryString
-                    : StringUtils.isBlank(queryString)
-                            ? urlCodec.encode(path, "UTF-8")
-                            : urlCodec.encode(path, "UTF-8") + '&' + queryString;
-        }
-        catch(final UnsupportedEncodingException uee) {
-            throw new IndexingException(uee);
-        }
+        return (StringUtils.isBlank(path))
+                ? queryString
+                : StringUtils.isBlank(queryString)
+                        ? URLEncoder.encode(path, StandardCharsets.UTF_8)
+                        : URLEncoder.encode(path, StandardCharsets.UTF_8) + '&' + queryString;
     }
     
     public String getInitialId() {

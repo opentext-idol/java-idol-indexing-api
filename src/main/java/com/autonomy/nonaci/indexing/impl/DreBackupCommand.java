@@ -13,10 +13,8 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
-import com.autonomy.nonaci.indexing.IndexingException;
-import org.apache.commons.codec.net.URLCodec;
-
-import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Allows you to back up IDOL server's data index. This command copies all the IDOL server data index's *.DB files to a 
@@ -30,9 +28,7 @@ public class DreBackupCommand extends IndexCommandImpl {
 
     /** The full path to the location where the backup is created. */
     private String path;
-    
-    private final URLCodec urlCodec = new URLCodec();
-    
+
     /** Creates a new instance of DreBackupCommand */
     public DreBackupCommand() {
         super(CMD_DREBACKUP);
@@ -40,12 +36,7 @@ public class DreBackupCommand extends IndexCommandImpl {
 
     @Override
     public String getQueryString() {
-        try {
-            return urlCodec.encode(path, "UTF-8");
-        }
-        catch(final UnsupportedEncodingException uee) {
-            throw new IndexingException(uee);
-        }
+        return URLEncoder.encode(path, StandardCharsets.UTF_8);
     }
     
     public String getPath() {

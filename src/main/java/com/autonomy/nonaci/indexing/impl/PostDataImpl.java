@@ -18,18 +18,19 @@ import com.autonomy.nonaci.indexing.PostData;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.http.HttpEntity;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.FileEntity;
-import org.apache.http.entity.InputStreamEntity;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.io.entity.FileEntity;
+import org.apache.hc.core5.http.io.entity.InputStreamEntity;
+import org.apache.hc.core5.http.io.entity.StringEntity;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 
 /**
@@ -49,7 +50,8 @@ public class PostDataImpl implements PostData {
 
     public PostDataImpl(final String string, final String charset) {
         try {
-            httpEntity = new StringEntity(string, StringUtils.isBlank(charset) ? "UTF-8" : charset);
+            httpEntity = new StringEntity(string,
+                    StringUtils.isBlank(charset) ? StandardCharsets.UTF_8 : Charset.forName(charset));
         }
         catch(final UnsupportedCharsetException uce) {
             throw new IndexingException("Unsupported charset specified, " + charset, uce);
@@ -57,7 +59,7 @@ public class PostDataImpl implements PostData {
     }
 
     public PostDataImpl(final File file) {
-        this(file, ContentType.create("text/plain", Charset.forName("UTF-8")));
+        this(file, ContentType.create("text/plain", StandardCharsets.UTF_8));
     }
 
     public PostDataImpl(final File file, final String contentType) {
@@ -73,7 +75,7 @@ public class PostDataImpl implements PostData {
     }
 
     public PostDataImpl(final InputStream inputStream, final long length) {
-        this.httpEntity = new InputStreamEntity(inputStream, length);
+        this.httpEntity = new InputStreamEntity(inputStream, length, null);
     }
 
     @Override
@@ -120,12 +122,12 @@ public class PostDataImpl implements PostData {
 
     @Override
     public String getContentType() {
-        return (httpEntity.getContentType() == null) ? null : httpEntity.getContentType().getValue();
+        return (httpEntity.getContentType() == null) ? null : httpEntity.getContentType();
     }
 
     @Override
     public String getContentEncoding() {
-        return (httpEntity.getContentEncoding() == null) ? null : httpEntity.getContentEncoding().getValue();
+        return (httpEntity.getContentEncoding() == null) ? null : httpEntity.getContentEncoding();
     }
 
     @Override
