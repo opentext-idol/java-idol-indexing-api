@@ -22,12 +22,12 @@
     <parent>
         <groupId>com.hp.autonomy</groupId>
         <artifactId>foss-master-pom</artifactId>
-        <version>3.2.0</version>
+        <version>3.3.0</version>
     </parent>
 
     <groupId>com.hp.autonomy.idol</groupId>
     <artifactId>indexing-api</artifactId>
-    <version>4.1.0-SNAPSHOT</version>
+   <version>4.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Java IDOL Indexing API</name>
