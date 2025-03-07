@@ -8,13 +8,8 @@ IDOL servers use an index port for indexing content. This library provides a Jav
 Previous versions were available as jar files from customer support.
 
 ## Usage
-java-idol-indexing-api is available from the central Maven repository.
 
-    <dependency>
-        <groupId>com.hp.autonomy.idol</groupId>
-        <artifactId>indexing-api</artifactId>
-        <version>4.1.0-SNAPSHOT</version>
-    </dependency>
+java-idol-indexing-api is available from the central Maven repository.
 
 For more documentation, see the project homepage [here](http://opentext-idol.github.io/java-idol-indexing-api).
 
