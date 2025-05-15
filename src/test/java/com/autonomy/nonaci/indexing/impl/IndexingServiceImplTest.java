@@ -34,9 +34,8 @@ public class IndexingServiceImplTest {
 
     @Before
     public void createIndexingServiceImpl() {
-        final ServerDetails serverDetails = new ServerDetails();
-        serverDetails.setHost("localhost");
-        serverDetails.setPort(9901);
+        final ServerDetails serverDetails = new ServerDetails(
+                ServerDetails.TransportProtocol.HTTP, "localhost", 9901, "/content/index");
 
         indexingService = new IndexingServiceImpl(serverDetails, HttpClientBuilder.create().build());
     }
@@ -47,7 +46,6 @@ public class IndexingServiceImplTest {
         final Map<String, String> parameters = new HashMap<>(1);
         parameters.put(IndexCommand.PARAM_DRE_DBNAME, UUID.randomUUID().toString());
 
-//        final IndexCommandImpl command = new IndexCommandImpl(IndexCommand.CMD_DREINITIAL);
         final IndexCommandImpl command = new IndexCommandImpl(IndexCommand.CMD_DRECREATEDBASE);
         command.setParameters(parameters);
 

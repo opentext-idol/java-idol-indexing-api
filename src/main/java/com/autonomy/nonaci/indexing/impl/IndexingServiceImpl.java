@@ -24,7 +24,6 @@ import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
-import org.apache.hc.core5.http.HttpResponse;
 import org.apache.hc.core5.net.URIBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,6 +76,7 @@ public class IndexingServiceImpl implements IndexingService {
     private URI createIndexCommandURI(final ServerDetails serverDetails, final IndexCommand command) throws URISyntaxException {
         LOGGER.trace("createIndexCommandURI() called...");
 
+        final String path = serverDetails.getPath();
         // Create the URI to use... We can't use URLEncodedUtils.parse() or setQuery() since they decode
         // command.getQueryString(), which we shouldn't do since both '+' and '%20' will be decoded-and-reencoded
         // to '+', which causes problems since IDOL treats these differently e.g. when listing DREREFERENCEs.
@@ -84,7 +84,7 @@ public class IndexingServiceImpl implements IndexingService {
                 .setScheme(serverDetails.getProtocol().toString().toLowerCase(Locale.ENGLISH))
                 .setHost(serverDetails.getHost())
                 .setPort(serverDetails.getPort())
-                .setPath('/' + command.getCommand())
+                .setPath((path.endsWith("/") ? path : (path + '/')) + command.getCommand())
                 .build();
 
         final String qs = command.getQueryString();

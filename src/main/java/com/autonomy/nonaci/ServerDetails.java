@@ -41,6 +41,11 @@ public class ServerDetails {
     /** Holds value of property port. */
     private int port;
 
+    /**
+     * Path to make requests to.
+     */
+    private String path = "/";
+
     /** Holds value of property charsetName. Defaults to UTF-8. */
     private String charsetName = "UTF-8";
 
@@ -85,6 +90,18 @@ public class ServerDetails {
     }
 
     /**
+     * @param protocol The protocol to use when communicating with the ACI server
+     * @param host The host of the ACI server
+     * @param port The port of the ACI server
+     * @param path Path to make requests to
+     */
+    public ServerDetails(final TransportProtocol protocol, final String host, final int port, final String path) {
+        this(protocol, host, port);
+        Validate.notNull(path, "path must not be null, it must be set to a value");
+        this.path = path;
+    }
+
+    /**
      * Copy constructor.
      *
      * @param that The {@link ServerDetails} to copy details from.
@@ -93,6 +110,7 @@ public class ServerDetails {
         this.protocol = that.protocol;
         this.host = that.host;
         this.port = that.port;
+        this.path = that.path;
         this.charsetName = that.charsetName;
     }
 
@@ -127,6 +145,7 @@ public class ServerDetails {
                     .append(this.protocol, that.protocol)
                     .append(this.host, that.host)
                     .append(this.port, that.port)
+                    .append(this.path, that.path)
                     .append(this.charsetName, that.charsetName)
                     .isEquals();
         }
@@ -145,6 +164,7 @@ public class ServerDetails {
                 .append(protocol)
                 .append(host)
                 .append(port)
+                .append(path)
                 .append(charsetName)
                 .toHashCode();
     }
@@ -203,6 +223,13 @@ public class ServerDetails {
     public void setPort(final int port) {
         Validate.isTrue((port >= 0) && (port <= 65536), "port is out of range, it should be between 0 and 65536.");
         this.port = port;
+    }
+
+    /**
+     * @return Path to make requests to
+     */
+    public String getPath() {
+        return this.path;
     }
 
     /**

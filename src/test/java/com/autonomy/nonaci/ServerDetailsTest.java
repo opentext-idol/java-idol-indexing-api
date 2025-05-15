@@ -13,15 +13,14 @@
  */
 package com.autonomy.nonaci;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.nio.charset.IllegalCharsetNameException;
 import java.nio.charset.UnsupportedCharsetException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.fail;
 
 public class ServerDetailsTest {
@@ -35,6 +34,7 @@ public class ServerDetailsTest {
         assertThat("protocol property is not HTTP", details.getProtocol(), is(equalTo(ServerDetails.TransportProtocol.HTTP)));
         assertThat("host property is not null", details.getHost(), is(nullValue()));
         assertThat("port property is not 0", details.getPort(), is(0));
+        assertThat("path property is not /", details.getPath(), is("/"));
         assertThat("charsetName property is incorrect", details.getCharsetName(), is("UTF-8"));
     }
 
@@ -105,6 +105,27 @@ public class ServerDetailsTest {
     }
 
     @Test
+    public void testFourParamConstructor() {
+        Assert.assertThrows(NullPointerException.class,
+                () -> new ServerDetails(null, "localhost", 10, "/req/path"));
+        Assert.assertThrows(NullPointerException.class,
+                () -> new ServerDetails(ServerDetails.TransportProtocol.HTTPS, null, 10, "/req/path"));
+        Assert.assertThrows(IllegalArgumentException.class,
+                () -> new ServerDetails(ServerDetails.TransportProtocol.HTTPS, "localhost", -10, "/req/path"));
+        Assert.assertThrows(NullPointerException.class,
+                () -> new ServerDetails(ServerDetails.TransportProtocol.HTTPS, "localhost", 10, null));
+
+        final ServerDetails details = new ServerDetails(
+                ServerDetails.TransportProtocol.HTTPS, "localhost", 10, "/req/path");
+
+        Assert.assertThat(details.getProtocol(), is(equalTo(ServerDetails.TransportProtocol.HTTPS)));
+        Assert.assertThat(details.getHost(), is(equalTo("localhost")));
+        Assert.assertThat(details.getPort(), is(10));
+        Assert.assertThat(details.getPath(), is("/req/path"));
+        Assert.assertThat(details.getCharsetName(), is("UTF-8"));
+    }
+
+    @Test
     public void testCopyConstructor() {
         // Create an instance...
         final ServerDetails details = new ServerDetails();
@@ -118,6 +139,7 @@ public class ServerDetailsTest {
         assertThat("protocol", newDetails.getProtocol(), is(equalTo(details.getProtocol())));
         assertThat("host", newDetails.getHost(), is(equalTo(details.getHost())));
         assertThat("port", newDetails.getPort(), is(equalTo(details.getPort())));
+        assertThat("path", newDetails.getPath(), is(equalTo(details.getPath())));
         assertThat("charsetName", newDetails.getCharsetName(), is(equalTo(details.getCharsetName())));
     }
     
