@@ -36,7 +36,7 @@ import java.nio.charset.UnsupportedCharsetException;
 /**
  * This implementation of the {@link com.autonomy.nonaci.indexing.PostData} interface can be used to send the contents
  * of a {@link java.lang.String}, {@link java.io.File} or {@link java.io.InputStream}. It is backed by the appropriate
- * {@link org.apache.http.HttpEntity} implementation from the Apache {@link org.apache.http.client.HttpClient} library.
+ * {@link HttpEntity} implementation from the Apache HttpComponents library.
  *
  * @author boba
  */
