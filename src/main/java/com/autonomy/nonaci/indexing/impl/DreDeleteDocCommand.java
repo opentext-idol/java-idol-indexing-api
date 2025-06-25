@@ -13,6 +13,8 @@
  */
 package com.autonomy.nonaci.indexing.impl;
 
+import java.util.Collection;
+
 /**
  * Allows you to identify individual documents and/or ranges of documents by their ID, and delete them from IDOL server.
  * <p />
@@ -22,10 +24,16 @@ package com.autonomy.nonaci.indexing.impl;
  * @author boba
  */
 public class DreDeleteDocCommand extends IndexCommandImpl {
+    private final DocsHelper<Long> docsHelper = new DocsHelper<>();
 
     /** Creates a new instance of DreDeleteDocCommand */
     public DreDeleteDocCommand() {
         super(CMD_DREDELETEDOC);
+    }
+
+    @Override
+    public String getQueryString() {
+        return docsHelper.getQueryString(super.getQueryString());
     }
 
     public String getDocs() {
@@ -33,26 +41,29 @@ public class DreDeleteDocCommand extends IndexCommandImpl {
     }
 
     /**
-     * Specify one or more individual documents and / or a range of documents that you want to delete. You can use the 
-     * following formats to do this (if you want to combine the two formats you must separate them with plus symbols 
+     * @param docIds The IDs of the documents to be deleted.
+     */
+    public void setDocs(final Collection<Long> docIds) {
+        docsHelper.setDocs(this, docIds);
+    }
+
+    /**
+     * Specify one or more individual documents and / or a range of documents that you want to delete. You can use the
+     * following formats to do this (if you want to combine the two formats you must separate them with plus symbols
      * with no spaces before or after a plus symbol):
      * <dl>
      *   <dt>doc IDs</dt>
-     *   <dd>Specify the IDs of one or more documents. If you want to specify multiple document IDs, you must separate 
+     *   <dd>Specify the IDs of one or more documents. If you want to specify multiple document IDs, you must separate
      *       them with plus symbols (there must be no space before or after a plus symbol).</dd>
      *   <dt>range=[&lt;first doc&gt;,&lt;last doc&gt;]</dt>
-     *   <dd>Enter the document ID of the first and last document in a range of documents that you want to delete. You 
+     *   <dd>Enter the document ID of the first and last document in a range of documents that you want to delete. You
      *       can delete up to 5000 documents at a time.</dd>
      * </dl>
-     * 
+     *
      * @param docs The IDs of the documents to be deleted.
      */
     public void setDocs(final String docs) {
-        put(PARAM_DOCS, docs);
-    }
-
-    public String getStateId() {
-        return get(PARAM_STATE_ID);
+        docsHelper.setDocs(this, docs);
     }
 
     /**

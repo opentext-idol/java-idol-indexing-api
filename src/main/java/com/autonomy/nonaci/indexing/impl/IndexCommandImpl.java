@@ -20,16 +20,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.hc.core5.http.NameValuePair;
-import org.apache.hc.core5.http.message.BasicNameValuePair;
-import org.apache.hc.core5.net.URLEncodedUtils;
 
 import java.io.File;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 /** 
@@ -117,12 +111,7 @@ public class IndexCommandImpl implements IndexCommand {
 
     @Override
     public String getQueryString() {
-        final List<NameValuePair> pairs = new ArrayList<>(parameters.size());
-
-        pairs.addAll(parameters.entrySet().stream()
-                .map(entry -> new BasicNameValuePair(entry.getKey(), entry.getValue())).toList());
-
-        return URLEncodedUtils.format(pairs, StandardCharsets.UTF_8);
+        return IndexCmdUtil.encodeQueryParams(parameters);
     }
 
     @Override
